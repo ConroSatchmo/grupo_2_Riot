@@ -5,7 +5,23 @@ Ajustaremos la oferta al publico armando categorías y filtros que permitan al u
 Lista de sitios:
 
     https://www.smartbuyglasses.com.ar/
+
+    Por la forma sencilla y cómoda que tiene para poder encontrar lo los productos buscados.
+
     https://www.sunglasshut.com/
+
+    Por el estilo y estética del sitio y la cantidad de ofertas que presenta al usuario.
+
+
     https://solsticesunglasses.com/
-    https://www.ray-ban.com/argentina
+
+    Por ser un sitio sobrio, ordenado y con muchas posibilidades para el usuario.
+
     https://www.blickers.com/
+
+    Lo elegimos porque plantea un sitio un poco más original que el resto, planteando una suerte de red social dentro de la página que puede servir de inspiración.
+
+
+    https://www.ray-ban.com/argentina
+
+    Por ser uno de los referentes del mercado y contar con un sitio que funciona desde lo estético y lo funcional.
