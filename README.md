@@ -18,3 +18,5 @@ Lista de sitios:
 
     https://www.ray-ban.com/argentina
     Por ser uno de los referentes del mercado y contar con un sitio que funciona desde lo estético y lo funcional.
+
+Link de trello: https://trello.com/b/vHMVpHMi/grupo-2-riot
