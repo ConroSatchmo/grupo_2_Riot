@@ -19,14 +19,10 @@ Lista de sitios:
     https://www.ray-ban.com/argentina
     Por ser uno de los referentes del mercado y contar con un sitio que funciona desde lo estético y lo funcional.
 
-<<<<<<< HEAD
-Link de Trello primero SPRINT: https://trello.com/b/vHMVpHMi/primer-sprint
+Link de Trello primer SPRINT: https://trello.com/b/vHMVpHMi/primer-sprint
 
 Link de Trello segundo SPRINT: https://trello.com/b/2no4HCew/segundo-sprint
-=======
-Link de trello: https://trello.com/b/vHMVpHMi/grupo-2-riot
 
 Tipografía: Mohave, Roboto Slab, Montserrat, Merriweather, Open Sans Condensed.
 
 Colores: Background: Blanco, Fuente: Negra, Detalles: Naranja, Rojo.
->>>>>>> 10c31db7b56674587218130206fa79e29eb75773
