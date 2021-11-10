@@ -1,5 +1,5 @@
-const app = require('./index');
+const app = require("./index");
 
-app.listen(app.get('port'), () => {
-  console.log('Server is running on port', app.get('port'));
+app.listen(app.get("port"), () => {
+  console.log("Server is running on port", app.get("port"));
 });
