@@ -14,3 +14,7 @@ app.use(require("./routes/index"));
 app.use(express.static(path.join(__dirname + "public")));
 
 module.exports = app;
+
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/index.html"));
+});
