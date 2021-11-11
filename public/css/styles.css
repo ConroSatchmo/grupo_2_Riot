@@ -1,0 +1,47 @@
+/* /*font-family: 'Montserrat', sans-serif;
+font-family: 'Mohave', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Merriweather', serif; */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.top-main-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: antiquewhite;
+  margin: auto;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  flex-grow: 0.4;
+}
+
+.search-bar {
+  flex-grow: 0.4;
+}
+
+.iconos {
+  flex-grow: 0.2;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  border: 1px solid black;
+  list-style: none;
+}
+
+nav ul li a {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
