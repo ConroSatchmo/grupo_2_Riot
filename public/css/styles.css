@@ -11,10 +11,10 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
 }
 
+/* header */
 .top-main-header {
   display: flex;
   justify-content: space-around;
-  background-color: antiquewhite;
   margin: auto;
   align-items: center;
 }
@@ -31,6 +31,9 @@ body {
 .iconos {
   flex-grow: 0.2;
 }
+.iconos i {
+  color: black;
+}
 .nav {
   display: flex;
   justify-content: space-between;
@@ -45,3 +48,6 @@ nav ul li a {
   text-decoration: none;
   color: black;
 }
+/* main  */
+
+/* footer */
