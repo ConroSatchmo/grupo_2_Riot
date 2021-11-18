@@ -14,34 +14,38 @@ body {
 /* header */
 .top-main-header {
   display: flex;
-  justify-content: space-around;
-  margin: auto;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  width: 100px;
-  flex-grow: 0.4;
+  margin: 15px;
+  width: 75px;
 }
-
-.search-bar {
-  flex-grow: 0.4;
-}
-
-.iconos {
+.divlogo {
+  display: flex;
   flex-grow: 0.2;
+}
+.search-bar {
+  display: flex;
+  flex-grow: 0.4;
+}
+.iconos {
+  display: flex;
+  flex-grow: 0.4;
 }
 .iconos i {
   color: black;
+  font-size: 25px;
 }
+
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: auto;
   border: 1px solid black;
   list-style: none;
 }
-
 nav ul li a {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 18px;
