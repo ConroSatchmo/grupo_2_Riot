@@ -53,6 +53,7 @@ nav ul li a {
 }
 nav ul li a:hover {
   background-color: salmon;
+  opacity: 0.8;
   color: white;
 }
 
@@ -78,10 +79,26 @@ main section {
 .botones button {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 16px;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  padding: 3px;
   transition: all 450ms;
 }
 .botones button:hover {
   background-color: salmon;
+  opacity: 0.8;
   color: white;
+}
+.olvidaste {
+  font-size: 12px;
+}
+.crea {
+  text-decoration: none;
+  color: black;
+  transition: text-decoration 450ms;
+}
+.crea:hover {
+  text-decoration: underline;
 }
 /* footer */
