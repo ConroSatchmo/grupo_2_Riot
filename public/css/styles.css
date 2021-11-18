@@ -25,17 +25,21 @@ body {
 .divlogo {
   display: flex;
   flex-grow: 0.2;
+  justify-content: center;
 }
 .search-bar {
   display: flex;
   flex-grow: 0.4;
+  justify-content: center;
 }
 .iconos {
   display: flex;
   flex-grow: 0.4;
+  justify-content: center;
 }
-.iconos i {
+.iconos a {
   color: black;
+  margin: 15px;
   font-size: 25px;
 }
 
@@ -54,9 +58,139 @@ nav ul li a {
   transition: all 450ms;
 }
 nav ul li a:hover {
-  background-color: salmon;
-  color: white;
+  /* background-color: salmon; */
+  color: salmon;
 }
 /* main  */
+
+main {
+  margin-top: 20px;
+}
+
+main h2.container-fluid {
+  margin: 20px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 80vw;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel {
+  width: 100%;
+  height: 400px;
+  border: black solid 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flecha-izq {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.flecha-der {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.productos-des {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.productos-des .img-des {
+  width: 300px;
+  height: 150px;
+  border: black solid 1px;
+  margin: 10px;
+}
+
+.marcas {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.marcas .img-marca {
+  width: 300px;
+  height: 150px;
+  border: black solid 1px;
+  margin: 10px;
+}
+
+.modelos-home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modelos {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+}
+
+.filtro-busqueda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 30%;
+  border: black solid 1px;
+}
+
+.filtro-busqueda .search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.filtros {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px;
+}
+
+.filtros div {
+  display: flex;
+  margin: 20px 0;
+}
+
+.modelos .img-modelo {
+  width: 200px;
+  height: 100px;
+  border: black solid 1px;
+  margin: 10px;
+}
 
 /* footer */
