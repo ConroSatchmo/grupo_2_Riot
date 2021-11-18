@@ -17,7 +17,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
 .logo {
   margin: 15px;
   width: 75px;
@@ -38,7 +37,6 @@ body {
   color: black;
   font-size: 25px;
 }
-
 .nav {
   display: flex;
   justify-content: space-around;
@@ -57,6 +55,33 @@ nav ul li a:hover {
   background-color: salmon;
   color: white;
 }
-/* main  */
 
+/* main  */
+main section {
+  margin: 20px;
+  border: 1px solid black;
+  padding: 10px;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+.formulario div {
+  margin-top: 10px;
+}
+.botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.botones button {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 16px;
+  transition: all 450ms;
+}
+.botones button:hover {
+  background-color: salmon;
+  color: white;
+}
 /* footer */
