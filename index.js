@@ -27,6 +27,7 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/login.html"));
 });
+<<<<<<< HEAD
 
 app.get("/productDetail", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/productDetail.html"));
@@ -36,6 +37,11 @@ app.get("/productCart", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/productCart.html"));
 });
 
+=======
+app.get("/carrito", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/productCart.html"));
+});
+>>>>>>> 397d498b2ba4365753ebd513e00df7644c91959c
 // app.post("/register", (req, res) => {
 //   console.log(req.body);
 //   res.sendFile(path.resolve(__dirname, "./views/register.html"));

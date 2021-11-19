@@ -13,7 +13,10 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 397d498b2ba4365753ebd513e00df7644c91959c
 .logo {
   margin: 15px;
   width: 75px;
@@ -21,16 +24,23 @@ body {
 .divlogo {
   display: flex;
   flex-grow: 0.2;
+<<<<<<< HEAD
   justify-content: center;
+=======
+>>>>>>> 397d498b2ba4365753ebd513e00df7644c91959c
 }
 .search-bar {
   display: flex;
   flex-grow: 0.4;
+<<<<<<< HEAD
   justify-content: center;
+=======
+>>>>>>> 397d498b2ba4365753ebd513e00df7644c91959c
 }
 .iconos {
   display: flex;
   flex-grow: 0.4;
+<<<<<<< HEAD
   justify-content: center;
 }
 .iconos a {
@@ -43,6 +53,13 @@ body {
   color: salmon;
 }
 
+=======
+}
+.iconos i {
+  color: black;
+  font-size: 25px;
+}
+>>>>>>> 397d498b2ba4365753ebd513e00df7644c91959c
 .nav {
   display: flex;
   justify-content: space-around;
@@ -60,8 +77,11 @@ nav ul li a {
 nav ul li a:hover {
   color: salmon;
 }
+<<<<<<< HEAD
 @media (max-width: 465px) {
   .top-main-header {
     display: block;
   }
 }
+=======
+>>>>>>> 397d498b2ba4365753ebd513e00df7644c91959c
