@@ -55,10 +55,9 @@ nav ul li a {
   font-size: 18px;
   text-decoration: none;
   color: black;
-  transition: all 450ms;
+  transition: color 450ms;
 }
 nav ul li a:hover {
-  /* background-color: salmon; */
   color: salmon;
 }
 /* main  */
