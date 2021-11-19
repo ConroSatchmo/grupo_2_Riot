@@ -9,15 +9,11 @@
       src="https://kit.fontawesome.com/053f398cf5.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@300&family=Roboto&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet"> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>Home</title>
+    <title>Creá tu cuenta</title>
   </head>
   <body>
     <header class="main-header">
@@ -44,6 +40,44 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section>
+        <div class="mensaje">
+          <h2>Creá tu cuenta</h2>
+        </div>
+        <form action="/register" method="post"  class="formulario">
+          <div class="nombreyapellido">
+            <label for="nombreyapellido">Nombre y Apellido</label>
+            <input
+              type="text"
+              name="nombreyapellido"
+              id="nombreyapellido"
+            />
+          </div>
+          <div class="email">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email"/>
+          </div>
+          <div class="domicilio">
+            <label for="domicilio">Domicilio</label>
+            <input type="text" name="domicilio" id="domicilio" />
+          </div>
+          <div class="usuario">
+            <label for="usuario">Nombre de usuari@</label>
+            <input type="text" name="usuario" id="usuario"/>
+          </div>
+          <div class="contrasenia">
+            <div class="contrasenia1">
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" id="password">
+            </div>
+            <div class="contrasenia2">
+              <label for="confirm">Confirmar contraseña</label>
+              <input type="password" name="confirm" id="confirm">
+            </div>
+          </div>
+          <button type="submit" class="boton">Crear</button>
+        </form>
+    </main>
   </body>
 </html>
