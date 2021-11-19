@@ -9,10 +9,6 @@
       src="https://kit.fontawesome.com/053f398cf5.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@300&family=Roboto&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet"> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
       rel="stylesheet"
@@ -22,17 +18,19 @@
   <body>
     <header class="main-header">
       <div class="top-main-header">
-        <div>
-          <img src="/images/logo1.jpeg" alt="logo" class="logo" />
+        <div class="divlogo">
+          <img src="/images/logo3.png" alt="logo" class="logo" />
         </div>
         <div class="search-bar">
           <input type="text" placeholder="Buscar productos, marcas" />
           <button><i class="fas fa-search"></i></button>
         </div>
         <div class="iconos">
-          <a class="carrito" href="#"><i class="fas fa-shopping-cart"></i></a>
+          <a class="carrito" href="/productCart"
+            ><i class="fas fa-shopping-cart"></i
+          ></a>
           <a class="favoritos" href="#"><i class="fas fa-heart"></i></a>
-          <a class="usuario" href="#"><i class="fas fa-user-circle"></i></a>
+          <a class="usuario" href="/login"><i class="fas fa-user"></i></a>
         </div>
       </div>
       <nav class="nav-bar">
@@ -44,5 +42,73 @@
         </ul>
       </nav>
     </header>
+    <main>
+      <section class="container">
+        <div class="carousel">
+          <div class="flecha-izq flecha">
+            <a href=""><i class="fas fa-chevron-left"></i></a>
+          </div>
+          <div class="flecha-der flecha">
+            <a href=""><i class="fas fa-chevron-right"></i></a>
+          </div>
+          carousel
+        </div>
+      </section>
+      <h2 class="container-fluid">productos destacados</h2>
+      <section class="container">
+        <div class="productos-des">
+          <div class="img1 img-des"></div>
+          <div class="img2 img-des"></div>
+          <div class="img3 img-des"></div>
+        </div>
+      </section>
+      <h2 class="container-fluid">Top marcas</h2>
+      <section class="container">
+        <div class="marcas">
+          <div class="img1 img-marca"></div>
+          <div class="img2 img-marca"></div>
+          <div class="img3 img-marca"></div>
+          <div class="img4 img-marca"></div>
+          <div class="img5 img-marca"></div>
+          <div class="img6 img-marca"></div>
+          <div class="img7 img-marca"></div>
+          <div class="img8 img-marca"></div>
+        </div>
+      </section>
+      <h2 class="container-fluid">Modelos</h2>
+      <section class="container modelos-home">
+        <div class="filtro-busqueda">
+          <div class="search-bar">
+            <h2>Filtro de busqueda</h2>
+          </div>
+          <div class="filtros">
+            <div>
+              <button><i class="fas fa-chevron-down"></i></button>
+              <h2>Marcas</h2>
+            </div>
+            <div>
+              <button><i class="fas fa-chevron-down"></i></button>
+              <h2>Forma</h2>
+            </div>
+            <div>
+              <button><i class="fas fa-chevron-down"></i></button>
+              <h2>Genero</h2>
+            </div>
+            <div>
+              <button><i class="fas fa-chevron-down"></i></button>
+              <h2>Precio</h2>
+            </div>
+          </div>
+        </div>
+        <div class="modelos">
+          <div class="img1 img-modelo"></div>
+          <div class="img2 img-modelo"></div>
+          <div class="img3 img-modelo"></div>
+          <div class="img4 img-modelo"></div>
+          <div class="img5 img-modelo"></div>
+          <div class="img6 img-modelo"></div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

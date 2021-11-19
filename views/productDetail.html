@@ -4,7 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProductDetail</title>
+    <link rel="stylesheet" href="/css/productDetail.css" />
+    <script
+      src="https://kit.fontawesome.com/053f398cf5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login</title>
   </head>
-  <body></body>
+  <body>
+    <header class="main-header">
+      <div class="top-main-header">
+        <div class="divlogo">
+          <a href="/"
+            ><img src="/images/logo3.png" alt="logo" class="logo" href
+          /></a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar productos, marcas" />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="iconos">
+          <a class="carrito" href="/productCart"
+            ><i class="fas fa-shopping-cart"></i
+          ></a>
+          <a class="favoritos" href="#"><i class="fas fa-heart"></i></a>
+          <a class="usuario" href="/login"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
+      <nav class="nav-bar">
+        <ul class="nav">
+          <li><a href="#">Lentes de Sol</a></li>
+          <li><a href="#">Marcas</a></li>
+          <li><a href="#">Colecciones</a></li>
+          <li><a href="#">Ofertas</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="producto">
+        <img src="/images/anteojos.jpg" class="foto-producto" />
+      </section>
+    </main>
+  </body>
 </html>

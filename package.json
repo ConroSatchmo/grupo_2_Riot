@@ -20,5 +20,8 @@
   "homepage": "https://github.com/ConroSatchmo/grupo_2_Riot#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

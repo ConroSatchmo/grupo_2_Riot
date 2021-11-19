@@ -4,7 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css" />
+    <script
+      src="https://kit.fontawesome.com/053f398cf5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Creá tu cuenta</title>
   </head>
-  <body></body>
+  <body>
+    <header class="main-header">
+      <div class="top-main-header">
+        <div class="divlogo">
+         <a href="/"><img src="/images/logo3.png" alt="logo" class="logo" /></a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar productos, marcas" />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="iconos">
+          <a class="carrito" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+          <a class="favoritos" href="#"><i class="fas fa-heart"></i></a>
+          <a class="usuario" href="/login"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
+      <nav class="nav-bar">
+        <ul class="nav">
+          <li><a href="#">Lentes de Sol</a></li>
+          <li><a href="#">Marcas</a></li>
+          <li><a href="#">Colecciones</a></li>
+          <li><a href="#">Ofertas</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="mensaje">
+          <h2>Creá tu cuenta</h2>
+        </div>
+        <form action="/register" method="post"  class="formulario">
+          <div class="nombreyapellido">
+            <label for="nombreyapellido">Nombre y Apellido</label>
+            <input
+              type="text"
+              name="nombreyapellido"
+              id="nombreyapellido"
+            />
+          </div>
+          <div class="email">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email"/>
+          </div>
+          <div class="domicilio">
+            <label for="domicilio">Domicilio</label>
+            <input type="text" name="domicilio" id="domicilio" />
+          </div>
+          <div class="usuario">
+            <label for="usuario">Nombre de usuari@</label>
+            <input type="text" name="usuario" id="usuario"/>
+          </div>
+          <div class="contrasenia">
+            <div class="contrasenia1">
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" id="password">
+            </div>
+            <div class="contrasenia2">
+              <label for="confirm">Confirmar contraseña</label>
+              <input type="password" name="confirm" id="confirm">
+            </div>
+          </div>
+          <button type="submit" class="boton">Crear</button>
+        </form>
+    </main>
+  </body>
 </html>

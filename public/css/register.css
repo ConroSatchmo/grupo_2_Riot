@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+/* header */
+.top-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: 15px;
+  width: 75px;
+}
+.divlogo {
+  display: flex;
+  flex-grow: 0.2;
+  justify-content: center;
+}
+.search-bar {
+  display: flex;
+  flex-grow: 0.4;
+  justify-content: center;
+}
+.iconos {
+  display: flex;
+  flex-grow: 0.4;
+  justify-content: center;
+}
+.iconos a {
+  color: black;
+  margin: 15px;
+  font-size: 25px;
+  transition: color 450ms;
+}
+.iconos a:hover {
+  color: salmon;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  border: 1px solid black;
+  list-style: none;
+}
+nav ul li a {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  transition: color 450ms;
+}
+nav ul li a:hover {
+  color: salmon;
+}
+@media (max-width: 465px) {
+  .top-main-header {
+    display: block;
+  }
+}
+
+/* main */
+main section {
+  margin: 20px;
+  border: 1px solid black;
+  padding: 10px;
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+.formulario div {
+  margin-top: 10px;
+}
+form button {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 150px;
+  align-self: center;
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  padding: 3px;
+  transition: all 450ms;
+}
+form button:hover {
+  background-color: salmon;
+  color: white;
+}
+
+/* footer */
