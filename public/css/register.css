@@ -94,5 +94,13 @@ form button:hover {
   background-color: salmon;
   color: white;
 }
+@media (min-width: 769px) {
+  main section {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
 
 /* footer */
