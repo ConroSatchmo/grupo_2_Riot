@@ -28,6 +28,12 @@ body {
   flex-grow: 0.4;
   justify-content: center;
 }
+.search-bar button {
+  border-radius: 2px;
+}
+.search-bar input {
+  border-radius: 2px;
+}
 .iconos {
   display: flex;
   flex-grow: 0.4;
@@ -174,4 +180,13 @@ p {
 }
 .btn:hover {
   background: #563434;
+}
+@media (min-width: 769px) {
+  .search-bar input {
+    width: 60%;
+    height: 30px;
+  }
+  .search-bar button {
+    width: 28px;
+  }
 }
