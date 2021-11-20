@@ -77,69 +77,71 @@ nav ul li a:hover {
   top: 100px;
 }
 
-.small-container{
+.small-container {
   max-width: 1000px;
   margin: auto;
   padding-left: 25px;
   padding-right: 20px;
 }
-.row{
+.row {
   display: flex;
-  align-items:center;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.single-product{
+.single-product {
   margin-top: 80px;
 }
-.small-img-row{
-  display:flex;
+.small-img-row {
+  display: flex;
   justify-content: space-around;
 }
 
-.col-2 img{
+.col-2 img {
   max-width: 100%;
   padding: 50px 0;
 }
-.small-img-col{
+.small-img-col {
   flex-basis: 24%;
   cursor: pointer;
 }
-.single-product .col-2 img{
+.single-product .col-2 img {
   padding: 0%;
-  }
+  transition: all 500ms;
+}
 .single-product .col-2 img:hover {
-    -ms-transform: scale(2.5); /* IE 9 */
-    -webkit-transform: scale(2.5); /* Safari 3-8 */
-    transform: scale(2.5);
-    border: 2px solid #ff523b; 
-  }
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari 3-8 */
+  transform: scale(2);
+  border: 2px solid #ff523b;
+  border-radius: 2px;
+}
 
 .single-product .col-2 {
-padding: 20px;
+  padding: 20px;
 }
-.col-2{
+.col-2 {
   flex-basis: 50%;
   min-width: 300px;
 }
 
-.col-2 h1{
+.col-2 h1 {
   font-size: 50px;
   line-height: 60px;
   margin: 25px 0;
 }
-.single-product select{
+.single-product select {
   display: block;
-  padding:10px;
-  margin-top:  20px;
+  padding: 10px;
+  margin-top: 20px;
 }
-.single-product h4{
+.single-product h4 {
   margin: 20px 0;
   font-size: 22px;
   font-weight: bold;
 }
 
-.single-product input{
+.single-product input {
   width: 50px;
   height: 40px;
   padding-left: 10px;
@@ -147,29 +149,29 @@ padding: 20px;
   margin-right: 10px;
   border: 1px solid #ff523b;
 }
-input:focus{
-  outline:none;
+input:focus {
+  outline: none;
 }
-a{
+a {
   text-decoration: none;
   color: #555;
 }
-.single-product .fa{
-  color:#ff523b;
+.single-product .fa {
+  color: #ff523b;
   margin-left: 10px;
 }
-p{
+p {
   color: #555;
 }
-.btn{
-  display:inline-block;
+.btn {
+  display: inline-block;
   background: #ff523b;
-  color:#fff;
+  color: #fff;
   padding: 8px 30px;
   margin: 30px 0;
   border-radius: 30px;
   transition: backgroud 0.5s;
 }
-.btn:hover{
+.btn:hover {
   background: #563434;
 }
