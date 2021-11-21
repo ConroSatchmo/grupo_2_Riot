@@ -9,7 +9,7 @@ body {
 
 /* header */
 .top-main-header {
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
 }
@@ -95,7 +95,7 @@ main h2.container-fluid {
 
 .carousel {
   width: 100%;
-  height: 400px;
+  height: 200px;
   border: black solid 1px;
   position: relative;
   display: flex;
@@ -120,14 +120,15 @@ main h2.container-fluid {
 .productos-des {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
 .productos-des .img-des {
-  width: 300px;
-  height: 150px;
+  width: 40%;
+  height: 100px;
   border: black solid 1px;
   margin: 10px;
 }
@@ -142,8 +143,8 @@ main h2.container-fluid {
 }
 
 .marcas .img-marca {
-  width: 300px;
-  height: 150px;
+  width: 40%;
+  height: 100px;
   border: black solid 1px;
   margin: 10px;
 }
@@ -151,12 +152,12 @@ main h2.container-fluid {
 .modelos-home {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .modelos {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
@@ -168,7 +169,7 @@ main h2.container-fluid {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 30%;
+  width: 70%;
   border: black solid 1px;
 }
 
@@ -198,9 +199,25 @@ main h2.container-fluid {
   margin: 10px;
 }
 
-@media (max-width: 465px) {
+/* footer */
+
+@media (min-width: 465px) {
   .top-main-header {
-    display: block;
+    display: flex;
+  }
+
+  .productos-des .img-des {
+    width: 250px;
+    height: 150px;
+  }
+
+  .marcas .img-marca {
+    width: 250px;
+    height: 150px;
+  }
+
+  .carousel {
+    height: 300px;
   }
 }
 @media (min-width: 769px) {
@@ -211,6 +228,27 @@ main h2.container-fluid {
   .search-bar button {
     width: 28px;
   }
+
+  .filtro-busqueda {
+    width: 30%;
+  }
+
+  .modelos {
+    display: flex;
+  }
+
+  .productos-des .img-des {
+    width: 300px;
+    height: 150px;
+  }
+
+  .marcas .img-marca {
+    width: 300px;
+    height: 150px;
+  }
+
+  .carousel {
+    height: 400px;
+  }
 }
 
-/* footer */
