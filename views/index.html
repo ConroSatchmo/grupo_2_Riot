@@ -16,32 +16,34 @@
     <title>Home</title>
   </head>
   <body>
-    <header class="main-header">
-      <div class="top-main-header">
-        <div class="divlogo">
-          <img src="/images/logo3.png" alt="logo" class="logo" />
+    <div class="header">
+      <header class="main-header">
+        <div class="top-main-header">
+          <div class="divlogo">
+            <img src="/images/logo3.png" alt="logo" class="logo" />
+          </div>
+          <div class="search-bar">
+            <input type="text" placeholder="Buscar productos, marcas" />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <div class="iconos">
+            <a class="carrito" href="/productCart"
+              ><i class="fas fa-shopping-cart"></i
+            ></a>
+            <a class="favoritos" href="#"><i class="fas fa-heart"></i></a>
+            <a class="usuario" href="/login"><i class="fas fa-user"></i></a>
+          </div>
         </div>
-        <div class="search-bar">
-          <input type="text" placeholder="Buscar productos, marcas" />
-          <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="iconos">
-          <a class="carrito" href="/productCart"
-            ><i class="fas fa-shopping-cart"></i
-          ></a>
-          <a class="favoritos" href="#"><i class="fas fa-heart"></i></a>
-          <a class="usuario" href="/login"><i class="fas fa-user"></i></a>
-        </div>
-      </div>
-      <nav class="nav-bar">
-        <ul class="nav">
-          <li><a href="#">Lentes de Sol</a></li>
-          <li><a href="#">Marcas</a></li>
-          <li><a href="#">Colecciones</a></li>
-          <li><a href="#">Ofertas</a></li>
-        </ul>
-      </nav>
-    </header>
+        <nav class="nav-bar">
+          <ul class="nav">
+            <li><a href="#">Lentes de Sol</a></li>
+            <li><a href="#">Marcas</a></li>
+            <li><a href="#">Colecciones</a></li>
+            <li><a href="#">Ofertas</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
     <main>
       <section class="container">
         <div class="carousel">
@@ -63,7 +65,7 @@
           carousel
         </div>
       </section>
-      <h2 class="container-fluid">productos destacados</h2>
+      <h2 class="container-fluid">Productos destacados</h2>
       <section class="container">
         <div class="productos-des">
           <a href="/productDetail"
@@ -91,99 +93,96 @@
               /></div
           ></a>
         </div>
+        <br />
       </section>
       <h2 class="container-fluid">Top marcas</h2>
       <section class="container">
         <div class="marcas">
-          <div class="img1 img-marca"><img
-                src="/images/rayban1200.jpg"              
-                width="100%"
-                class="small-img" 
-                /></div>
-          <div class="img2 img-marca"><img
-                src="/images/dolce-e-gabbana1200.jpg"              
-                width="100%"
-                class="small-img" 
-                /></div>
-          <div class="img3 img-marca"><img
-                src="/images/emporio-armani1200.jpg"              
-                width="100%"
-                class="small-img" 
-                /></div>
-          <div class="img4 img-marca"><img
-                src="/images/pradaeyewear1200.jpg"              
-                width="100%"
-                class="small-img" 
-                /></div>
-          <div class="img5 img-marca"><img
-                src="/images/vogue_1200x420.jpg"              
-                width="100%"
-                class="small-img" 
-                /></div>
-          <div class="img6 img-marca"><img
-                src="/images/michael-kors1200.jpg"              
-                width="100%"
-                class="small-img" 
-                /></div>
-        
+          <div class="img1 img-marca">
+            <img src="/images/rayban1200.jpg" width="100%" class="small-img" />
+          </div>
+          <div class="img2 img-marca">
+            <img
+              src="/images/dolce-e-gabbana1200.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img3 img-marca">
+            <img
+              src="/images/emporio-armani1200.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img4 img-marca">
+            <img
+              src="/images/pradaeyewear1200.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img5 img-marca">
+            <img
+              src="/images/vogue_1200x420.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img6 img-marca">
+            <img
+              src="/images/michael-kors1200.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
         </div>
       </section>
       <h2 class="container-fluid">Modelos</h2>
       <section class="container modelos-home">
-        <div class="filtro-busqueda">
-          <div class="search-bar">
-            <h2>Filtro de busqueda</h2>
-          </div>
-          <div class="filtros">
-            <div>
-              <button><i class="fas fa-chevron-down"></i></button>
-              <h2>Marcas</h2>
-            </div>
-            <div>
-              <button><i class="fas fa-chevron-down"></i></button>
-              <h2>Forma</h2>
-            </div>
-            <div>
-              <button><i class="fas fa-chevron-down"></i></button>
-              <h2>Genero</h2>
-            </div>
-            <div>
-              <button><i class="fas fa-chevron-down"></i></button>
-              <h2>Precio</h2>
-            </div>
-          </div>
-        </div>
         <div class="modelos">
-          <div class="img1 img-modelo"><img
-                src="/images/0RB2140__902_000A.jpg"
-                width="100%"
-                class="small-img"
-              /></div>
-          <div class="img2 img-modelo"><img
-                src="/images/0RB3561__002_58_000A.jpg"
-                width="100%"
-                class="small-img"
-              /></div>
-          <div class="img3 img-modelo"><img
-                src="/images/0RB4098__710_71_000A.jpg"
-                width="100%"
-                class="small-img"
-              /></div>
-          <div class="img4 img-modelo"><img
-                src="/images/0VO5280SB__W44_87_000A.jpg"
-                width="100%"
-                class="small-img"
-              /></div>
-          <div class="img5 img-modelo"><img
-                src="/images/0VO5211S__2073_2_000A.jpg"
-                width="100%"
-                class="small-img"
-              /></div>
-          <div class="img6 img-modelo"><img
-                src="/images/0VO4106S__848_F5_000A.jpg"
-                width="100%"
-                class="small-img"
-              /></div>
+          <div class="img1 img-modelo">
+            <img
+              src="/images/0RB2140__902_000A.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img2 img-modelo">
+            <img
+              src="/images/0RB3561__002_58_000A.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img3 img-modelo">
+            <img
+              src="/images/0RB4098__710_71_000A.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img4 img-modelo">
+            <img
+              src="/images/0VO5280SB__W44_87_000A.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img5 img-modelo">
+            <img
+              src="/images/0VO5211S__2073_2_000A.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
+          <div class="img6 img-modelo">
+            <img
+              src="/images/0VO4106S__848_F5_000A.jpg"
+              width="100%"
+              class="small-img"
+            />
+          </div>
         </div>
       </section>
     </main>
@@ -196,9 +195,9 @@
           nombre deriva del inglés, haciendo homenaje a las raíces anglosajonas
           de nuestro barrio. Sin embargo, nuestros anteojos de sol fueron
           diseñados para la vida porteña. Hacemos enfásis en la comodidad y en
-          la calidad de nuestros cristales. Nuestros valores reflejan lo que un
-          negocio fundado por un grupo de jovenes citadinos y el estilo
-          minimalista que promueven.
+          la calidad de nuestros cristales. Nuestros valores reflejan un negocio
+          fundado por un grupo de jóvenes citadinos y el estilo minimalista que
+          promueven.
         </p>
       </div>
       <div class="atencionAlCliente">
