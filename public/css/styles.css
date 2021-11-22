@@ -130,14 +130,42 @@ main h2.container-fluid {
 .productos-des .img-des {
   width: 70%;
   height: 100px;
-  border: black solid 1px;
   margin: 0 auto;
   margin-top: 15px;
-  transition: all 500ms;
+  transition: all 4500ms;
 }
 .productos-des .img-des :hover {
   border: salmon solid 2px;
+  border-radius: 3px;
   transform: scale(1.2);
+}
+
+.info-producto {
+  padding: 5px;
+  background-color: #fff;
+  position: relative;
+}
+
+.info-precio {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.precio {
+  color: black;
+  font-size: 18px;
+}
+.descuento {
+  font-size: 16px;
+  color: salmon;
+}
+.descripcion {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-size: 16px;
+  margin: 0px 0px 20px 0px;
+  color: black;
 }
 
 .marcas {
@@ -202,8 +230,12 @@ main h2.container-fluid {
 .modelos .img-modelo {
   width: 200px;
   height: 100px;
-  border: black solid 1px;
   margin: 10px;
+  transition: all 400ms;
+}
+
+.modelos .img-modelo:hover {
+  transform: scale(1.2);
 }
 
 /* footer */
