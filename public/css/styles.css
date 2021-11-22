@@ -132,18 +132,17 @@ main h2.container-fluid {
   height: 100px;
   margin: 0 auto;
   margin-top: 15px;
-  transition: all 4500ms;
+  margin-bottom: 20px;
+  transition: all 450ms;
 }
-.productos-des .img-des :hover {
-  border: salmon solid 2px;
-  border-radius: 3px;
+.productos-des .img-des:hover {
   transform: scale(1.2);
+  z-index: 1;
 }
 
 .info-producto {
   padding: 5px;
   background-color: #fff;
-  position: relative;
 }
 
 .info-precio {
