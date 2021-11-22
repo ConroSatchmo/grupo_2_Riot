@@ -65,6 +65,45 @@ nav ul li a {
 nav ul li a:hover {
   color: salmon;
 }
+/* footer */
+footer {
+  border: black solid 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.quienesSomos {
+  width: 40%;
+  padding: 10px;
+  display: none;
+}
+.atencionAlCliente {
+  padding: 10px;
+}
+footer h3 {
+  margin-bottom: 10px;
+}
+footer li {
+  list-style-type: none;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  transition: color 450ms;
+}
+footer a:hover {
+  color: salmon;
+}
+.mediosDePago ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contacto {
+  margin-right: 20px;
+}
 @media (max-width: 465px) {
   .top-main-header {
     display: block;
@@ -77,5 +116,8 @@ nav ul li a:hover {
   }
   .search-bar button {
     width: 28px;
+  }
+  .quienesSomos {
+    display: inline-block;
   }
 }
