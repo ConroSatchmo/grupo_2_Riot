@@ -100,34 +100,13 @@ form button:hover {
   background-color: salmon;
   color: white;
 }
-@media (min-width: 769px) {
-  main section {
-    position: relative;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 50px;
-  }
-}
-@media (min-width: 769px) {
-  .search-bar input {
-    width: 60%;
-    height: 30px;
-  }
-  .search-bar button {
-    width: 28px;
-  }
-  .quienesSomos {
-    display: inline-block;
-  }
-}
-
 /* footer */
 footer {
   border: black solid 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .quienesSomos {
   width: 40%;
@@ -159,4 +138,26 @@ footer a:hover {
 }
 .contacto {
   margin-right: 20px;
+}
+
+@media (min-width: 769px) {
+  main section {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .search-bar input {
+    width: 60%;
+    height: 30px;
+  }
+  .search-bar button {
+    width: 28px;
+  }
+  .quienesSomos {
+    display: inline-block;
+  }
+  footer {
+    margin-top: 50px;
+  }
 }
