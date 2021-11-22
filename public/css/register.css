@@ -119,6 +119,9 @@ form button:hover {
   .quienesSomos {
     display: inline-block;
   }
+  footer {
+    margin-top: 50px;
+  }
 }
 
 /* footer */
@@ -127,7 +130,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .quienesSomos {
   width: 40%;
