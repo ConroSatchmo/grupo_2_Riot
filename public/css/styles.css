@@ -338,13 +338,15 @@ footer a:hover {
     margin-top: 50px;
   }
 }
-@media (max-width: 766px) {
-  .marcas img {
-    margin-top: 30px;
-  }
-}
+
 @media (max-width: 769px) {
   .marcas img {
     margin-top: 35px;
+  }
+}
+
+@media (min-width: 769px) {
+  .marcas img {
+    margin-top: 25px;
   }
 }
