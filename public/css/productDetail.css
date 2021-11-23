@@ -116,9 +116,9 @@ nav ul li a:hover {
   transition: all 500ms;
 }
 .single-product .col-2 img:hover {
-  -ms-transform: scale(2); /* IE 9 */
-  -webkit-transform: scale(2); /* Safari 3-8 */
-  transform: scale(2);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
   border: 2px solid salmon;
   border-radius: 2px;
 }
