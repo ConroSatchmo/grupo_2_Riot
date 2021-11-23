@@ -230,11 +230,15 @@ main h2.container-fluid {
   width: 200px;
   height: 100px;
   margin: 10px;
+  margin-bottom: 40px;
   transition: all 400ms;
 }
 
 .modelos .img-modelo:hover {
   transform: scale(1.2);
+}
+.modelos h3 {
+  margin-left: 35%;
 }
 
 /* footer */
