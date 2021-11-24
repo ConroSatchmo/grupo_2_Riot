@@ -94,15 +94,66 @@ main h2.container-fluid {
   width: 100%;
 }
 
-.carousel {
+/* slider */
+
+.container-slider {
   width: 100%;
-  height: 200px;
-  border: black solid 1px;
+  max-width: 900px;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 5px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
+.slider {
+  width: 400%;
+  /* height: 400px; */
+  display: flex;
+  margin-left: -100%;
+}
+
+.slider-section {
+  width: 100%;
+}
+
+.slider-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  transition-timing-function: linear;
+  transition: all 450ms;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn-left {
+  left: 10px;
+}
+
+.slider-btn-right {
+  right: 10px;
+}
+
+
+/* fin slider */
 
 .flecha-izq {
   position: absolute;

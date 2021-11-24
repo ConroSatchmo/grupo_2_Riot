@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
+    <script src="scripts/slider.js" defer></script>
     <title>Home</title>
   </head>
   <body>
@@ -46,17 +47,19 @@
     </div>
     <main>
       <section class="container">
-        <div class="carousel">
-          <div class="flecha-izq flecha">
-            <button><i class="fas fa-chevron-left"></i></button>
+        <div class="container-slider">
+          <div class="slider" id="slider">
+            <div class="slider-section"><img src="images/slider_rayban1200.jpg" alt="slider-img" class="slider-img"></div>
+            <div class="slider-section"><img src="images/slider_raynban2400.jpg" alt="slider-img" class="slider-img"></div>
+            <div class="slider-section"><img src="images/slider2_1200.jpg" alt="slider-img" class="slider-img"></div>
+            <div class="slider-section"><img src="images/slidervogue1200.jpg" alt="slider-img" class="slider-img"></div>
           </div>
-          <div>
-            <img src="/images/slider_rayban1200.jpg" width="100" />
+          <div class="slider-btn slider-btn-right" id="btn-right">
+            <i class="fas fa-chevron-right"></i>
           </div>
-          <div class="flecha-der flecha">
-            <button><i class="fas fa-chevron-right"></i></button>
+          <div class="slider-btn slider-btn-left" id="btn-left">
+            <i class="fas fa-chevron-left"></i>
           </div>
-          carousel
         </div>
       </section>
       <h2 class="container-fluid">Productos destacados</h2>
