@@ -281,11 +281,15 @@ main h2.container-fluid {
   width: 200px;
   height: 100px;
   margin: 10px;
+  margin-bottom: 40px;
   transition: all 400ms;
 }
 
 .modelos .img-modelo:hover {
   transform: scale(1.2);
+}
+.modelos h3 {
+  margin-left: 35%;
 }
 
 /* footer */
@@ -339,7 +343,7 @@ footer a:hover {
   }
 
   .marcas .img-marca {
-    width: 400px;
+    width: 200px;
     height: 150px;
   }
 
@@ -386,7 +390,13 @@ footer a:hover {
   }
 }
 
-@media (max-width: 465px) {
+@media (max-width: 769px) {
+  .marcas img {
+    margin-top: 35px;
+  }
+}
+
+@media (min-width: 769px) {
   .marcas img {
     margin-top: 25px;
   }

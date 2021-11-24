@@ -65,7 +65,96 @@ nav ul li a {
 nav ul li a:hover {
   color: salmon;
 }
+/* cart */
+.small-container {
+  max-width: 1000px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 20px;
+}
+.img-cart {
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+}
+.cart-page {
+  margin: 80px auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+th {
+  text-align: left;
+  padding: 5px;
+  color: #fff;
+  background: salmon;
+  font-weight: normal;
+}
+
+td {
+  padding: 10px 5px;
+}
+td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+td a {
+  color: salmon;
+  font-size: 12px;
+}
+
+td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.precio-total {
+  display: flex;
+  justify-content: flex-end;
+}
+.precio-total table {
+  border-top: 3px solid salmon;
+  width: 100%;
+  max-width: 350px;
+}
+
+td:last-child {
+  text-align: right;
+}
+th:last-child {
+  text-align: right;
+}
+.total-total {
+  font-size: 35px;
+}
+/* fin cart */
+
 /* footer */
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  background: salmon;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 10px 0;
+  border-radius: 30px;
+  transition: backgroud 0.5s;
+  transform: scale(1.3);
+}
+.btn:hover {
+  background: #563434;
+}
 footer {
   border: black solid 1px;
   display: flex;
