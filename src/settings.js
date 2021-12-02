@@ -1,26 +1,27 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const publicPath = path.resolve(__dirname, "./public");
 
 // Setting
-app.set("port", 3000);
+app.set("port", process.env.PORT || 3000);
+app.set("views", path.resolve(__dirname, "views"));
+app.set("view engine", "ejs");
 
 // Middleware
 
 // Routes
-app.use(require("./routes/index"));
+const homeRouter = require("./routes/home");
+app.use('/', homeRouter);
+
+const authRouter = require("./routes/auth");
+app.use('/auth', authRouter);
 
 // Static
+const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
-// app.use(express.json);
-// app.use(urlencoded({ extended: true }));
 
 module.exports = app;
 
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/index.html"));
-});
 app.get("/register", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/register.html"));
 });
@@ -35,12 +36,3 @@ app.get("/productDetail", (req, res) => {
 app.get("/productCart", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/productCart.html"));
 });
-
-// app.post("/register", (req, res) => {
-//   console.log(req.body);
-//   res.sendFile(path.resolve(__dirname, "./views/register.html"));
-// });
-// app.post("/login", (req, res) => {
-//   console.log(req.body);
-//   res.sendFile(path.resolve(__dirname, "./views/login.html"));
-// });
