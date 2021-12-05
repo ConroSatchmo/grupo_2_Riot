@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {nameStyle: 'styles', titleHTML: 'Home'}) %> 
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <section class="">
+            <div class="container-slider">
+                <div class="slider" id="slider">
+                    <div class="slider-section">
+                        <img src="images/slider_rayban1200.jpg" alt="slider-img" class="slider-img" />
+                    </div>
+                    <div class="slider-section">
+                        <img src="images/slider_raynban2400.jpg" alt="slider-img" class="slider-img" />
+                    </div>
+                    <div class="slider-section">
+                        <img src="images/slider2_1200.jpg" alt="slider-img" class="slider-img" />
+                    </div>
+                    <div class="slider-section">
+                        <img src="images/slidervogue1200.jpg" alt="slider-img" class="slider-img" />
+                    </div>
+                </div>
+                <div class="slider-btn slider-btn-right" id="btn-right">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="slider-btn slider-btn-left" id="btn-left">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+            </div>
+        </section>
+        <h2 class="container-fluid">Productos destacados</h2>
+        <section class="container">
+            <div class="productos-des">
+                <style>
+                    a {
+                        text-decoration: none;
+                    }
+                </style>
+                <a href="/productDetail">
+                    <div class="img1 img-des">
+                        <img src="/images/0RB3025__001_33_000A.jpg" width="100%" class="small-img" />
+                    </div>
+                    <section class="info-producto">
+                        <section class="info-precio">
+                            <p class="precio">$15.500</p>
+                            <p class="descuento">40% OFF</p>
+                        </section>
+                        <h4 class="descripcion">Ray Ban 4200</h4>
+                    </section>
+                </a>
+                <a href="/productDetail">
+                    <div class="img2 img-des">
+                        <img src="/images/0DG2166__04_96_000A.jpg" width="100%" class="small-img" />
+                    </div>
+                    <section class="info-producto">
+                        <section class="info-precio">
+                            <p class="precio">$15.500</p>
+                            <p class="descuento">40% OFF</p>
+                        </section>
+                        <h4 class="descripcion">Ray Ban 4200</h4>
+                    </section>
+                </a>
+                <a href="/productDetail">
+                    <div class="img3 img-des">
+                        <img src="/images/0VJ2004__W65673_000A.jpg" width="100%" class="small-img" />
+                    </div>
+                    <section class="info-producto">
+                        <section class="info-precio">
+                            <p class="precio">$15.500</p>
+                            <p class="descuento">40% OFF</p>
+                        </section>
+                        <h4 class="descripcion">Ray Ban 4200</h4>
+                    </section>
+                </a>
+            </div>
+        </section>
+        <h2 class="container-fluid">Top marcas</h2>
+        <section class="container">
+            <div class="marcas">
+                <div class="img1 img-marca">
+                    <img src="/images/rayban1200.jpg" width="100%" class="small-img" />
+                </div>
+                <div class="img2 img-marca">
+                    <img src="/images/dolce-e-gabbana1200.jpg" width="100%" class="small-img" />
+                </div>
+                <div class="img3 img-marca">
+                    <img src="/images/emporio-armani1200.jpg" width="100%" class="small-img" />
+                </div>
+                <div class="img4 img-marca">
+                    <img src="/images/pradaeyewear1200.jpg" width="100%" class="small-img" />
+                </div>
+                <div class="img5 img-marca">
+                    <img src="/images/vogue_1200x420.jpg" width="100%" class="small-img" />
+                </div>
+                <div class="img6 img-marca">
+                    <img src="/images/michael-kors1200.jpg" width="100%" class="small-img" />
+                </div>
+            </div>
+        </section>
+        <h2 class="container-fluid">Modelos</h2>
+        <section class="container modelos-home">
+            <div class="modelos">
+                <div class="img1 img-modelo">
+                    <img src="/images/0RB2140__902_000A.jpg" width="100%" class="small-img" />
+                    <h3>Wayfarer</h3>
+                </div>
+                <div class="img2 img-modelo">
+                    <img src="/images/0RB3561__002_58_000A.jpg" width="100%" class="small-img" />
+                    <h3>Marshall</h3>
+                </div>
+                <div class="img3 img-modelo">
+                    <img src="/images/0RB4098__710_71_000A.jpg" width="100%" class="small-img" />
+                    <h3>Jackie Ohh</h3>
+                </div>
+                <div class="img4 img-modelo">
+                    <img src="/images/0VO5280SB__W44_87_000A.jpg" width="100%" class="small-img" />
+                    <h3>Soho</h3>
+                </div>
+                <div class="img5 img-modelo">
+                    <img src="/images/0VO5211S__2073_2_000A.jpg" width="100%" class="small-img" />
+                    <h3>Woman</h3>
+                </div>
+                <div class="img6 img-modelo">
+                    <img src="/images/0VO4106S__848_F5_000A.jpg" width="100%" class="small-img" />
+                    <h3>Woman</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <%- include('./partials/footer') %> 
+</body>
+
+</html>
