@@ -63,6 +63,7 @@ nav ul li a {
   text-decoration: none;
   color: black;
   transition: color 450ms;
+  font-weight: 1000;
 }
 nav ul li a:hover {
   color: salmon;
