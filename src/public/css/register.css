@@ -100,6 +100,10 @@ form button:hover {
   background-color: salmon;
   color: white;
 }
+
+invalid {
+  border: 2px solid #ff0000;
+}
 /* footer */
 footer {
   border: black solid 1px;

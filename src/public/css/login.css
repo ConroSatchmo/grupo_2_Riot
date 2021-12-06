@@ -114,6 +114,10 @@ main section {
 .crea:hover {
   text-decoration: underline;
 }
+
+invalid {
+  border: 2px solid #ff0000;
+}
 /* footer */
 footer {
   border: black solid 1px;
