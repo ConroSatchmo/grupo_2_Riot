@@ -11,16 +11,19 @@ app.set("view engine", "ejs");
 
 // Routes
 const homeRouter = require("./routes/home");
-app.use('/', homeRouter);
+app.use("/", homeRouter);
 
 const authRouter = require("./routes/auth");
-app.use('/auth', authRouter);
+app.use("/auth", authRouter);
 
 const productDetailRouter = require("./routes/productDetail");
-app.use('/productDetail', productDetailRouter);
+app.use("/productDetail", productDetailRouter);
 
 const productCartRouter = require("./routes/productCart");
-app.use('/productCart', productCartRouter);
+app.use("/productCart", productCartRouter);
+
+const createProductRouter = require("./routes/createProduct");
+app.use("/createProduct", createProductRouter);
 
 // Static
 const publicPath = path.resolve(__dirname, "./public");
