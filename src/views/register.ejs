@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head', {nameStyle: 'register', titleHTML: 'Register'}) %> 
+<%- include('./partials/head', {nameStyle: 'register' , titleHTML: 'Register' }) %>
 
 
-<body>
-    <%- include('./partials/header') %> 
+  <body>
+    <%- include('./partials/header') %>
 
-  <main>
-    <section>
-      <div class="mensaje">
-        <h2>Creá tu cuenta</h2>
-      </div>
-      <form action="/register" method="post" class="formulario">
-        <div class="nombreyapellido">
-          <label for="nombreyapellido">Nombre y Apellido</label>
-          <input type="text" name="nombreyapellido" id="nombreyapellido" required />
-        </div>
-        <div class="email">
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" required/>
-        </div>
-        <div class="domicilio">
-          <label for="domicilio">Domicilio</label>
-          <input type="text" name="domicilio" id="domicilio" required />
-        </div>
-        <div class="usuario">
-          <label for="usuario">Nombre de usuari@</label>
-          <input type="text" name="usuario" id="usuario"  required/>
-        </div>
-        <div class="contrasenia">
-          <div class="contrasenia1">
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" required pattern=".{8,}"
-            title="La contraseña debe tener un mínimo de 8 caracteres.">
+      <main>
+        <section>
+          <div class="mensaje">
+            <h2>Creá tu cuenta</h2>
           </div>
-          <div class="contrasenia2">
-            <label for="confirm">Confirmar contraseña</label>
-            <input type="password" name="confirm" id="confirm" required pattern=".{8,}"
-            title="La contraseña debe tener un mínimo de 8 caracteres.">
-          </div>
-        </div>
-        <button type="submit" class="boton" required>Crear</button>
-      </form>
-  </main>
-  
-  <%- include('./partials/footer') %> 
-</body>
+          <form action="/auth/login" method="get" class="formulario">
+            <div class="nombreyapellido">
+              <label for="nombreyapellido">Nombre y Apellido</label>
+              <input type="text" name="nombreyapellido" id="nombreyapellido" required />
+            </div>
+            <div class="email">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div class="domicilio">
+              <label for="domicilio">Domicilio</label>
+              <input type="text" name="domicilio" id="domicilio" required />
+            </div>
+            <div class="usuario">
+              <label for="usuario">Nombre de usuari@</label>
+              <input type="text" name="usuario" id="usuario" required />
+            </div>
+            <div class="contrasenia">
+              <div class="contrasenia1">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" required pattern=".{8,}"
+                  title="La contraseña debe tener un mínimo de 8 caracteres.">
+              </div>
+              <div class="contrasenia2">
+                <label for="confirm">Confirmar contraseña</label>
+                <input type="password" name="confirm" id="confirm" required pattern=".{8,}"
+                  title="La contraseña debe tener un mínimo de 8 caracteres.">
+              </div>
+            </div>
+            <button type="submit" class="boton" required>Crear</button>
+          </form>
+      </main>
+
+      <%- include('./partials/footer') %>
+  </body>
 
 </html>
