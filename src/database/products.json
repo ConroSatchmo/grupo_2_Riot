@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+<<<<<<< HEAD
     "name": "Flour - Strong Pizza",
     "description": "Nondisp Maisonneuve's fx r leg, 7thJ",
     "color": "Khaki",
@@ -11,10 +12,23 @@
       "http://dummyimage.com/136x100.png/ff4444/ffffff",
       "http://dummyimage.com/148x100.png/ff4444/ffffff",
       "http://dummyimage.com/166x100.png/cc0000/ffffff"
+=======
+    "name": "Dolce Gabbana 2166",
+    "description": "Nondisp Maisonneuve's fx r leg, 7thJ",
+    "color": "Gris",
+    "brand": "Dolce Gabbana",
+    "price": 59,
+    "images": [
+      "0DG2166__04_96_000A.jpg",
+      "0DG2166__04_96_030A.jpg",
+      "0DG2166__04_96_060A.jpg",
+      "0DG2166__04_96_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 2,
+<<<<<<< HEAD
     "name": "Oneshot Automatic Soap System",
     "description": "Congenital compression facies",
     "color": "Maroon",
@@ -25,10 +39,23 @@
       "http://dummyimage.com/112x100.png/dddddd/000000",
       "http://dummyimage.com/219x100.png/cc0000/ffffff",
       "http://dummyimage.com/205x100.png/dddddd/000000"
+=======
+    "name": "Dolce Gabbana 2175",
+    "description": "Congenital compression facies",
+    "color": "Marrón",
+    "brand": "Dolce Gabbana",
+    "price": 56,
+    "images": [
+      "0DG2175__502_73_000A.jpg",
+      "0DG2175__502_73_030A.jpg",
+      "0DG2175__502_73_060A.jpg",
+      "0DG2175__502_73_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 3,
+<<<<<<< HEAD
     "name": "Muffin Batt - Carrot Spice",
     "description": "Displ oth extrartic fx l calcaneus, subs for fx w delay heal",
     "color": "Blue",
@@ -39,10 +66,23 @@
       "http://dummyimage.com/230x100.png/5fa2dd/ffffff",
       "http://dummyimage.com/239x100.png/dddddd/000000",
       "http://dummyimage.com/157x100.png/5fa2dd/ffffff"
+=======
+    "name": "Dolce Gabbana 2220",
+    "description": "Displ oth extrartic fx l calcaneus, subs for fx w delay heal",
+    "color": "Verde",
+    "brand": "Dolce Gabbana",
+    "price": 35,
+    "images": [
+      "0DG2220__01_87_000A.jpg",
+      "0DG2220__01_87_030A.jpg",
+      "0DG2220__01_87_060A.jpg",
+      "0DG2220__01_87_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 4,
+<<<<<<< HEAD
     "name": "Soup - Cream Of Broccoli",
     "description": "Disp fx of coracoid process, right shoulder, init",
     "color": "Pink",
@@ -53,10 +93,23 @@
       "http://dummyimage.com/246x100.png/dddddd/000000",
       "http://dummyimage.com/102x100.png/ff4444/ffffff",
       "http://dummyimage.com/242x100.png/ff4444/ffffff"
+=======
+    "name": "Dolce Gabbana 2222",
+    "description": "Disp fx of coracoid process, right shoulder, init",
+    "color": "Negro",
+    "brand": "Dolce Gabbana",
+    "price": 48,
+    "images": [
+      "0DG2222__01_87_000A.jpg",
+      "0DG2222__01_87_030A.jpg",
+      "0DG2222__01_87_060A.jpg",
+      "0DG2222__01_87_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 5,
+<<<<<<< HEAD
     "name": "Wine - Casablanca Valley",
     "description": "Defects in post-translational mod of lysosomal enzymes",
     "color": "Red",
@@ -67,10 +120,23 @@
       "http://dummyimage.com/163x100.png/5fa2dd/ffffff",
       "http://dummyimage.com/218x100.png/5fa2dd/ffffff",
       "http://dummyimage.com/130x100.png/5fa2dd/ffffff"
+=======
+    "name": "Dolce Gabbana 4268",
+    "description": "Defects in post-translational mod of lysosomal enzymes",
+    "color": "Dorado",
+    "brand": "Dolce Gabbana",
+    "price": 25,
+    "images": [
+      "0DG4268__501_8G_000A.jpg",
+      "0DG4268__501_8G_030A.jpg",
+      "0DG4268__501_8G_060A.jpg",
+      "0DG4268__501_8G_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 6,
+<<<<<<< HEAD
     "name": "Eggplant Oriental",
     "description": "Intcran inj w loss of consciousness of 31-59 min, subs",
     "color": "Teal",
@@ -81,10 +147,23 @@
       "http://dummyimage.com/146x100.png/dddddd/000000",
       "http://dummyimage.com/239x100.png/dddddd/000000",
       "http://dummyimage.com/203x100.png/ff4444/ffffff"
+=======
+    "name": "Dolce Gabbana 4348",
+    "description": "Intcran inj w loss of consciousness of 31-59 min, subs",
+    "color": "Negro",
+    "brand": "Dolce Gabbana",
+    "price": 49,
+    "images": [
+      "0DG4348__501_8G_000A.jpg",
+      "0DG4348__501_8G_030A.jpg",
+      "0DG4348__501_8G_060A.jpg",
+      "0DG4348__501_8G_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 7,
+<<<<<<< HEAD
     "name": "Jolt Cola",
     "description": "Chronic angle-closure glaucoma, unsp eye, severe stage",
     "color": "Red",
@@ -95,10 +174,23 @@
       "http://dummyimage.com/165x100.png/cc0000/ffffff",
       "http://dummyimage.com/147x100.png/cc0000/ffffff",
       "http://dummyimage.com/148x100.png/dddddd/000000"
+=======
+    "name": "Emporio Armani 2069",
+    "description": "Chronic angle-closure glaucoma, unsp eye, severe stage",
+    "color": "Negro",
+    "brand": "Emporio Armani",
+    "price": 25,
+    "images": [
+      "0EA2069__301455_000A.jpg",
+      "0EA2069__301455_000A.jpg",
+      "0EA2069__301455_000A.jpg",
+      "0EA2069__301455_000A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 8,
+<<<<<<< HEAD
     "name": "Steampan - Lid For Half Size",
     "description": "Post disp fx of sternal end r clavicle, 7thD",
     "color": "Blue",
@@ -109,10 +201,23 @@
       "http://dummyimage.com/208x100.png/5fa2dd/ffffff",
       "http://dummyimage.com/186x100.png/dddddd/000000",
       "http://dummyimage.com/163x100.png/ff4444/ffffff"
+=======
+    "name": "Emporio Armani 2080",
+    "description": "Post disp fx of sternal end r clavicle, 7thD",
+    "color": "Plateado",
+    "brand": "Emporio Armani",
+    "price": 46,
+    "images": [
+      "0EA2080__30016G_000A.jpg",
+      "0EA2080__30016G_030A.jpg",
+      "0EA2080__30016G_060A.jpg",
+      "0EA2080__30016G_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 9,
+<<<<<<< HEAD
     "name": "Coffee Guatemala Dark",
     "description": "Fetomaternal placental transfusion syndrome",
     "color": "Orange",
@@ -123,6 +228,18 @@
       "http://dummyimage.com/110x100.png/5fa2dd/ffffff",
       "http://dummyimage.com/250x100.png/dddddd/000000",
       "http://dummyimage.com/121x100.png/cc0000/ffffff"
+=======
+    "name": "Emporio Armani 4071",
+    "description": "Fetomaternal placental transfusion syndrome",
+    "color": "Marrón",
+    "brand": "Emporio Armani",
+    "price": 7,
+    "images": [
+      "0EA4071__502613_000A.jpg",
+      "0EA4071__502613_030A.jpg",
+      "0EA4071__502613_060A.jpg",
+      "0EA4071__502613_090A.jpg"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
@@ -253,6 +370,7 @@
   },
   {
     "id": 19,
+<<<<<<< HEAD
     "name": "Prada PR 06TS",
     "description": "Barn as the place of occurrence of the external cause",
     "color": "Gris",
@@ -263,10 +381,23 @@
       "0PR_06TS__VAS2B0_030A.jpg",
       "0PR_06TS__VAS2B0_060A.jpg",
       "0PR_06TS__VAS2B0_090A.jpg"
+=======
+    "name": "Egg - Salad Premix",
+    "description": "Barn as the place of occurrence of the external cause",
+    "color": "Maroon",
+    "brand": "Mag-Al Plus XS",
+    "price": 22,
+    "images": [
+      "http://dummyimage.com/177x100.png/dddddd/000000",
+      "http://dummyimage.com/181x100.png/cc0000/ffffff",
+      "http://dummyimage.com/226x100.png/cc0000/ffffff",
+      "http://dummyimage.com/204x100.png/5fa2dd/ffffff"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 20,
+<<<<<<< HEAD
     "name": "Prada Conceptual 08OS",
     "description": "Other sprain of other and unspecified finger(s)",
     "color": "Negro",
@@ -277,10 +408,23 @@
       "0PR_08OS__1AB0A7_030A.jpg",
       "0PR_08OS__1AB0A7_060A.jpg",
       "0PR_08OS__1AB0A7_090A.jpg"
+=======
+    "name": "Orange - Blood",
+    "description": "Other sprain of other and unspecified finger(s)",
+    "color": "Mauv",
+    "brand": "Beet",
+    "price": 26,
+    "images": [
+      "http://dummyimage.com/188x100.png/dddddd/000000",
+      "http://dummyimage.com/231x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/166x100.png/dddddd/000000",
+      "http://dummyimage.com/116x100.png/dddddd/000000"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 21,
+<<<<<<< HEAD
     "name": "Prada PR 23VS",
     "description": "Pedestrian injured in other and unsp transport accidents",
     "color": "Negro",
@@ -291,10 +435,23 @@
       "0PR_23VS__1AB0A9_030A.jpg",
       "0PR_23VS__1AB0A9_060A.jpg",
       "0PR_23VS__1AB0A9_090A.jpg"
+=======
+    "name": "External Supplier",
+    "description": "Pedestrian injured in other and unsp transport accidents",
+    "color": "Mauv",
+    "brand": "FOLIC ACID",
+    "price": 71,
+    "images": [
+      "http://dummyimage.com/165x100.png/ff4444/ffffff",
+      "http://dummyimage.com/244x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/235x100.png/dddddd/000000",
+      "http://dummyimage.com/234x100.png/5fa2dd/ffffff"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 22,
+<<<<<<< HEAD
     "name": "Ray Ban Square II 901",
     "description": "Disorders of muscle in diseases classd elswhr, r low leg",
     "color": "Negro",
@@ -305,10 +462,23 @@
       "0RB1973__901_31_030A.jpg",
       "0RB1973__901_31_060A.jpg",
       "0RB1973__901_31_090A.jpg"
+=======
+    "name": "Pork - Shoulder",
+    "description": "Disorders of muscle in diseases classd elswhr, r low leg",
+    "color": "Indigo",
+    "brand": "Clonidine",
+    "price": 20,
+    "images": [
+      "http://dummyimage.com/147x100.png/dddddd/000000",
+      "http://dummyimage.com/226x100.png/ff4444/ffffff",
+      "http://dummyimage.com/244x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/154x100.png/cc0000/ffffff"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 23,
+<<<<<<< HEAD
     "name": " Ray Ban Wayfarer Original Classic",
     "description": "Disorders of the eye following cataract surgery",
     "color": "Negro",
@@ -319,10 +489,23 @@
       "0RB2140__902_030A.jpg",
       "0RB2140__902_060A.jpg",
       "0RB2140__902_090A.jpg"
+=======
+    "name": "Soup - Canadian Pea, Dry Mix",
+    "description": "Disorders of the eye following cataract surgery",
+    "color": "Pink",
+    "brand": "Quinapril",
+    "price": 59,
+    "images": [
+      "http://dummyimage.com/137x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/216x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/212x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/117x100.png/dddddd/000000"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 24,
+<<<<<<< HEAD
     "name": "Ray Ban Meteor RB 2168",
     "description": "Infect/inflm reaction due to int fix of left radius, subs",
     "color": "Ray Ban",
@@ -333,10 +516,23 @@
       "0RB2168__902_32_030A.jpg",
       "h0RB2168__902_32_060A.jpg",
       "0RB2168__902_32_090A.jpg"
+=======
+    "name": "Nantucket Apple Juice",
+    "description": "Infect/inflm reaction due to int fix of left radius, subs",
+    "color": "Orange",
+    "brand": "Lisinopril and Hydrochlorothiazide",
+    "price": 46,
+    "images": [
+      "http://dummyimage.com/122x100.png/cc0000/ffffff",
+      "http://dummyimage.com/207x100.png/dddddd/000000",
+      "http://dummyimage.com/162x100.png/cc0000/ffffff",
+      "http://dummyimage.com/231x100.png/ff4444/ffffff"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 25,
+<<<<<<< HEAD
     "name": "Ray Ban Clubmaster Folding",
     "description": "Chondromalacia patellae",
     "color": "Negro",
@@ -347,10 +543,23 @@
       "0RB2176__901_030A.jpg",
       "0RB2176__901_060A.jpg",
       "0RB2176__901_090A.jpg"
+=======
+    "name": "Parsley - Dried",
+    "description": "Nondisp fx of distal phalanx of left lesser toe(s), init",
+    "color": "Green",
+    "brand": "Long Lasting Finish with Comfort Serum",
+    "price": 75,
+    "images": [
+      "http://dummyimage.com/111x100.png/ff4444/ffffff",
+      "http://dummyimage.com/218x100.png/dddddd/000000",
+      "http://dummyimage.com/142x100.png/ff4444/ffffff",
+      "http://dummyimage.com/235x100.png/cc0000/ffffff"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 26,
+<<<<<<< HEAD
     "name": "Ray Ban Aviator Classic",
     "description": "Laceration w fb of left eyelid and periocular area, subs",
     "color": "Naranja",
@@ -361,10 +570,23 @@
       "0RB3025__001_33_030A.jpg",
       "0RB3025__001_33_060A.jpg",
       "0RB3025__001_33_090A.jpg"
+=======
+    "name": "Sugar - Sweet N Low, Individual",
+    "description": "Chondromalacia patellae",
+    "color": "Yellow",
+    "brand": "Captopril",
+    "price": 73,
+    "images": [
+      "http://dummyimage.com/241x100.png/cc0000/ffffff",
+      "http://dummyimage.com/159x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/131x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/232x100.png/ff4444/ffffff"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
     "id": 27,
+<<<<<<< HEAD
     "name": "Ray Ban Aviator Classic 0RB3025L",
     "description": "Unspecified sprain of right middle finger, subs encntr",
     "color": "Negro",
@@ -375,6 +597,18 @@
       "0RB3025L__L0205_030A.jpg",
       "0RB3025L__L0205_060A.jpg",
       "0RB3025L__L0205_090A.jpg"
+=======
+    "name": "Cream - 10%",
+    "description": "Laceration w fb of left eyelid and periocular area, subs",
+    "color": "Goldenrod",
+    "brand": "Zosyn",
+    "price": 5,
+    "images": [
+      "http://dummyimage.com/226x100.png/ff4444/ffffff",
+      "http://dummyimage.com/199x100.png/5fa2dd/ffffff",
+      "http://dummyimage.com/130x100.png/dddddd/000000",
+      "http://dummyimage.com/250x100.png/ff4444/ffffff"
+>>>>>>> afd35ba9838fb78a83e938e429ba9412dfd3136c
     ]
   },
   {
