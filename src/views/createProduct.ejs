@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head', {nameStyle: 'register', titleHTML: 'Creación de Productos'}) %> 
+<head>
+  <%- include('./partials/head', {nameStyle: 'register', titleHTML: 'Creación de Productos'}) %> 
+</head>
 
 <body>
     <%- include('./partials/header') %>
@@ -11,7 +13,7 @@
           <div class="mensaje">
             <h2>Creá tu producto</h2>
           </div>
-          <form action="/createProduct" method="post" class="formulario">
+          <form action="/createProduct" method="post" class="formulario" enctype="multipart/form-data">
             <div class="nombreDeProducto">
               <label for="nombreDeProducto">Nombre de Producto</label>
               <input type="text" name="nombreDeProducto" id="nombreDeProducto" required />

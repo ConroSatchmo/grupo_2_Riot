@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/css/framework.css">
+    <%- include('./partials/head', {nameStyle: 'styles2'}) %> 
+</head>
+
+
+<body>
+    <%- include('./partials/header') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="grid grid-col-4">
+                        <% products.forEach(element => { %>
+                    
+                        <div class="card">
+                            
+                        <a href="/products/<%= element.id %>"><p> <img src="/images/<%= element.images[0] %>" alt="" width="200">  </p></a>
+                        <p><%= element.name %> </p>
+                        </div>
+                    
+                        <% }); %> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
