@@ -17,26 +17,26 @@
         <div class="small-container single-product">
             <div class="row">
                 <div class="col-2">
-                    <img src="/images/0RB3025__001_33_000A.jpg" width="100%" id="ProductImg" />
+                    <img src="/images/<%= product.images[0] %>" width="100%" id="ProductImg" />
                     <div class="small-img-row">
                         <div class="small-img-col">
-                            <img src="/images/0RB3025__001_33_000A.jpg" width="100%" class="small-img" />
+                            <img src="/images/<%= product.images[0] %>" width="100%" class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="/images/0RB3025__001_33_030A.jpg" width="100%" class="small-img" />
+                            <img src="/images/<%= product.images[1] %>" width="100%" class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="/images/0RB3025__001_33_060A.jpg" width="100%" class="small-img" />
+                            <img src="/images/<%= product.images[2] %>" width="100%" class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="/images/0RB3025__001_33_090A.jpg" width="100%" class="small-img" />
+                            <img src="/images/<%= product.images[3] %>" width="100%" class="small-img" />
                         </div>
                     </div>
                 </div>
                 <div class="col-2">
                     <p>Home / Anteojos de Sol / Rayban</p>
-                    <h1>Ray Ban 4250</h1>
-                    <h4>$15.500</h4>
+                    <h1><%= product.name %></h1>
+                    <h4>$<%= product.price %></h4>
                     <select>
                         <option>Seleccione Color</option>
                         <option>Polarizado Azul</option>
@@ -47,17 +47,7 @@
                     <h3>Detalle del producto<i class="fa fa-indent"></i>
                     </h3>
                     <br>
-                    <p>Las Ray-Ban Original Wayfarer Classic son el modelo más reconocible en la historia de las gafas
-                        de sol. Desde
-                        su diseño inicial en 1952, las Wayfarer Classic fueron popularizándose entre celebridades,
-                        músicos, artistas y
-                        personas con un sentido de la moda impecable.
-                        Como estilo emblemático de gafas de sol, las Original Wayfarer Classic siempre constituyen una
-                        auténtica
-                        declaración de intenciones. Puedes elegir unas clásicas gafas de sol Wayfarer con montura negra
-                        con una
-                        variedad de tratamientos de las lentes, como cristal verde, cristal gris degradado, G-15
-                        polarizadas, etc.
+                    <p><%= product.description %>
                     </p>
 
                     </input>
