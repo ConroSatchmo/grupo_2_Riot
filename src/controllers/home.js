@@ -1,8 +1,11 @@
 // const path = require('path');
+const productsDB = require('./database');
 
 const homeController = {
     renderHome: (req, res) => {
-        res.render('home');
+        const productos = productsDB.select()
+        // console.log(productos);
+        res.render('home', { productos });
     }
 }
 
