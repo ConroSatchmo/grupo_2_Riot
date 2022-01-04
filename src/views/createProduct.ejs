@@ -2,50 +2,69 @@
 <html lang="en">
 
 <head>
-  <%- include('./partials/head', {nameStyle: 'register', titleHTML: 'Creación de Productos'}) %> 
+  <%- include('./partials/head', {nameStyle: 'register' , titleHTML: 'Creación de Productos' }) %>
 </head>
 
 <body>
-    <%- include('./partials/header') %>
+  <%- include('./partials/header') %>
 
     <main>
-        <section>
-          <div class="mensaje">
-            <h2>Creá tu producto</h2>
+      <section>
+        <div class="mensaje">
+          <h2>Creá tu producto</h2>
+        </div>
+        <form action="/createProduct" method="POST" class="formulario" enctype="multipart/form-data">
+          <div class="nombreDeProducto">
+            <label for="nombreDeProducto">Nombre de Producto</label>
+            <input type="text" name="nombreDeProducto" id="nombreDeProducto" required />
           </div>
-          <form action="/createProduct" method="post" class="formulario" enctype="multipart/form-data">
-            <div class="nombreDeProducto">
-              <label for="nombreDeProducto">Nombre de Producto</label>
-              <input type="text" name="nombreDeProducto" id="nombreDeProducto" required />
-            </div>
-            <div class="marca">
-              <label for="marca">Marca</label>
-              <input type="text" name="marca" id="marca" required />
-            </div>
-            <div class="precio">
-              <label for="precio">Precio</label>
-              <input type="number" name="precio" id="precio"  required/>
-            </div>
-            <div class="color">
-                <label for="color">Color del cristal</label>
-                <select>
-                    <option>Polarizado Verde</option>
-                    <option>Polarizado Azul</option>
-                    <option>Polarizado Marron</option>
-                </select>
-            </div>
-            <div class="descripcion">
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10" required >Descripción del Producto</textarea>
-            </div>
-            <div class="imagen">
-                <label for="imagenDelProducto">Imagen del producto</label>
-<input type="file" name="imagenDelProducto" accept="image/*" multiple>
-            </div>
-            <button type="submit" class="boton" required>Crear</button>
-          </form>
-      </main>
-      
-      <%- include('./partials/footer') %> 
-    </body>
-    
-    </html>
+          <div class="marca">
+            <label for="marca">Marca</label>
+            <input type="text" name="marca" id="marca" required />
+          </div>
+          <div class="precio">
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" required />
+          </div>
+          <div class="Id">
+            <label for="Id">Numero de id</label>
+            <input type="Id" name="Id" id="Id" required />
+          </div>
+          <div class="color">
+            <label for="color">Color del cristal</label>
+            <select name="color" id="color">
+              <option> Verde</option>
+              <option> Azul</option>
+              <option> Marrón</option>
+              <option> Negro</option>
+              <option> Magenta</option>
+            </select>
+          </div>
+          <div class="descripcion">
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"
+              required>Descripción del Producto</textarea>
+          </div>
+          <div class="imagen">
+            <label for="imagenDelProducto">Imagen número 1 del producto </label>
+            <input type="file" name="imagenDelProducto1" accept="image/*" multiple>
+          </div>
+          <div class="imagen">
+            <label for="imagenDelProducto">Imagen número 2 del producto </label>
+            <input type="file" name="imagenDelProducto2" accept="image/*" multiple>
+          </div>
+          <div class="imagen">
+            <label for="imagenDelProducto">Imagen número 3 del producto </label>
+            <input type="file" name="imagenDelProducto3" accept="image/*" multiple>
+          </div>
+          <div class="imagen">
+            <label for="imagenDelProducto">Imagen número 4 del producto </label>
+            <input type="file" name="imagenDelProducto4" accept="image/*" multiple>
+          </div>
+          <button type="submit" class="boton" required>Crear</button>
+        </form>
+    </main>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
