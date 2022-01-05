@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head', {nameStyle: 'productDetail'}) %> 
+    <%- include('./partials/head', {nameStyle: 'productDetail' }) %>
 </head>
 
 <body>
@@ -36,8 +36,10 @@
                 </div>
                 <div class="col-2">
                     <p>Home / Anteojos de Sol / Rayban</p>
-                    <h1><%= product.name %></h1>
-                    <h4>$<%= product.price %></h4>
+                    <h1>
+                        <%= product.name %>
+                    </h1>
+                    <h4>$<%= product.price %>00</h4>
                     <select>
                         <option>Seleccione Color</option>
                         <option>Polarizado Azul</option>
@@ -48,7 +50,8 @@
                     <h3>Detalle del producto<i class="fa fa-indent"></i>
                     </h3>
                     <br>
-                    <p><%= product.description %>
+                    <p>
+                        <%= product.description %>
                     </p>
 
                     </input>
