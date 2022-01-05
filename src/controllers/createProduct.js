@@ -7,13 +7,13 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const createProductController = {
   store: (req, res) => {
     const product = {
-      id: req.body.id,
+      id: Number(req.body.id),
       name: req.body.nombreDeProducto,
       description: req.body.descripcion,
       color: req.body.color,
       brand: req.body.marca,
-      price: req.body.precio,
-      images: req.body.imagen,
+      price: Number(req.body.precio),
+      images: [req.body.imagen],
     };
     products.push(product);
     const productJSON = JSON.stringify(products);
