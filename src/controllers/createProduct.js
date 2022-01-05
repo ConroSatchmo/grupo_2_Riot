@@ -19,6 +19,9 @@ const createProductController = {
     };
     res.redirect("/products");
   },
+  edit: (req, res) => {},
+
+  delete: (req, res) => {},
 };
 
 module.exports = createProductController;

@@ -334,6 +334,10 @@ footer a:hover {
 }
 /* media */
 @media (min-width: 465px) {
+  .logo {
+    margin: 15px;
+    width: 90px;
+  }
   .top-main-header {
     display: flex;
   }
@@ -357,6 +361,10 @@ footer a:hover {
   }
 }
 @media (min-width: 769px) {
+  .logo {
+    margin: 15px;
+    width: 110px;
+  }
   .search-bar input {
     width: 60%;
     height: 30px;
@@ -405,16 +413,13 @@ footer a:hover {
 
     font-size: 24px;
   }
+  .marcas img {
+    margin-top: 25px;
+  }
 }
 
 @media (max-width: 769px) {
   .marcas img {
     margin-top: 35px;
-  }
-}
-
-@media (min-width: 769px) {
-  .marcas img {
-    margin-top: 25px;
   }
 }
