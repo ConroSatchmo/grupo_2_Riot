@@ -614,5 +614,14 @@
       "0VO5211S__2073_2_060A.jpg",
       "0VO5211S__2073_2_090A.jpg"
     ]
+  },
+  {
+    "id": 45,
+    "name": "Prueba",
+    "description": "Descripción del Producto",
+    "color": "Verde",
+    "brand": "Prueba",
+    "price": 5,
+    "images": [null]
   }
 ]
