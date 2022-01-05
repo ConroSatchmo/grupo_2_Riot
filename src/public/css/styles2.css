@@ -336,6 +336,10 @@ footer a:hover {
   .top-main-header {
     display: flex;
   }
+  .logo {
+    margin: 15px;
+    width: 90px;
+  }
 
   .productos-des .img-des {
     width: 250px;
@@ -415,5 +419,9 @@ footer a:hover {
 @media (min-width: 769px) {
   .marcas img {
     margin-top: 25px;
+  }
+  .logo {
+    margin: 15px;
+    width: 110px;
   }
 }

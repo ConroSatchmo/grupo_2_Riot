@@ -194,6 +194,12 @@ footer a:hover {
 .contacto {
   margin-right: 20px;
 }
+@media (min-width: 465px) {
+  .logo {
+    margin: 15px;
+    width: 90px;
+  }
+}
 @media (max-width: 465px) {
   .top-main-header {
     display: block;
@@ -203,6 +209,10 @@ footer a:hover {
   .search-bar input {
     width: 60%;
     height: 30px;
+  }
+  .logo {
+    margin: 15px;
+    width: 110px;
   }
   .search-bar button {
     width: 28px;

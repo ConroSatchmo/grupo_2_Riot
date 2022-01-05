@@ -71,6 +71,12 @@ nav ul li a:hover {
     display: block;
   }
 }
+@media (min-width: 465px) {
+  .logo {
+    margin: 15px;
+    width: 90px;
+  }
+}
 
 /* main */
 main section {
@@ -164,5 +170,9 @@ footer a:hover {
   }
   footer {
     margin-top: 50px;
+  }
+  .logo {
+    margin: 15px;
+    width: 110px;
   }
 }
