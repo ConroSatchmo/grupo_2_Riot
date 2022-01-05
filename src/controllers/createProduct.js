@@ -15,10 +15,11 @@ const createProductController = {
       price: req.body.precio,
       images: req.body.imagen,
     };
-    products.unshift(product);
-    const productJSON = JSON.stringify(products);
-    fs.writeFileSync(productsFilePath, productJSON);
-    res.redirect("products");
+    res.send("hola");
+    // products.unshift(product);
+    // const productJSON = JSON.stringify(products);
+    // fs.writeFileSync(productsFilePath, productJSON);
+    // // res.redirect("products");
   },
   edit: (req, res) => {
     const id = req.params.id;
