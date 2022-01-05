@@ -1,5 +1,13 @@
 [
   {
+    "id": "45",
+    "name": "Prueba",
+    "description": "Descripción del Producto",
+    "color": "Verde",
+    "brand": "Prueba",
+    "price": "2"
+  },
+  {
     "id": 1,
     "name": "Dolce Gabbana 2166",
     "description": "Nondisp Maisonneuve's fx r leg, 7thJ",
