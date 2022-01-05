@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-
+const multer = require("multer");
 const createProductController = require("../controllers/createProduct");
 
 router.get("/", createProductController.render);

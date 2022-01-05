@@ -1,3 +1,6 @@
+const path = require("path");
+
+
 const createProductController = {
   render: (req, res) => {
     res.render("createProduct");
