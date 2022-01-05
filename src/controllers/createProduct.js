@@ -15,10 +15,11 @@ const createProductController = {
       price: req.body.precio,
       images: req.body.imagen,
     };
-    products.unshift(product);
+    products.push(product);
     const productJSON = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, productJSON);
-    res.redirect("products");
+
+    res.redirect("/products");
   },
   edit: (req, res) => {
     const id = req.params.id;
@@ -28,7 +29,8 @@ const createProductController = {
   update: (req, res) => {
     const id = req.params.id;
     let image;
-    const { name, description, color, brand, price, images } = req.body;
+    const { nombreDeProducto, descripcion, color, marca, precio, imagen } =
+      req.body;
     products.forEach((product) => {
       if (product.id === id) {
         if (req.file) {
