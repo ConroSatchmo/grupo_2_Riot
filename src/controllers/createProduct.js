@@ -18,7 +18,7 @@ const createProductController = {
     products.unshift(product);
     const productJSON = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, productJSON);
-    res.redirect("/products");
+    res.redirect("products");
   },
   edit: (req, res) => {
     const id = req.params.id;
