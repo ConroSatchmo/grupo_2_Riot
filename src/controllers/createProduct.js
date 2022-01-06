@@ -33,7 +33,8 @@ const createProductController = {
     products.forEach((product) => {
       if (product.id === id) {
         if (req.file) {
-          image = req.file.originalname;
+          image = req.file.filename;
+          console.log(image);
           fs.unlink(imagesPath + product.image, (err) => {
             if (err) throw err;
             console.log(err);

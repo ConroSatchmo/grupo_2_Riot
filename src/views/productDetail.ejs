@@ -56,8 +56,12 @@
                     </p>
 
                     </input>
-                </div>
-
+                    <br>
+                    <a href="/products/edit/<%= product.id %>">Editar</a>
+                <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="btn">Eliminar</button>
+                </form>
+                </div>    
             </div>
         </div>
         <script>
