@@ -15,10 +15,11 @@ const createProductController = {
       price: Number(req.body.precio),
       images: [],
     };
-
-    for (let i = 0; i <= 3; i++) {
-      product.images.push(req.body.imagen);
-    }
+    console.log("req.files");
+    console.log(req.file);
+    arrayImagenes = [];
+    const imagenes = req.files;
+    imagenes.forEach((file) => product.images.push(file));
 
     products.push(product);
     const productJSON = JSON.stringify(products);
