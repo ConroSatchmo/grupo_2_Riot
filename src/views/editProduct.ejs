@@ -41,10 +41,19 @@
             value="<%= product.description %>">Descripción del Producto</textarea>
           </div>
           <div class="imagen">
-            <label for="imagenDelProducto">Imagenes del producto </label>
-            <img src="<%= '/images/products/' %><%= product.image %>" alt="Imagen del producto">
+            <label for="imagenDelProducto">Imagen 1 del producto </label>
+            <img src="<%= '/images/ %><%= product.image[0] %>" alt="Imagen del producto">
             <input type="file" name="imagen">
-          
+            <label for="imagenDelProducto">Imagen 2 del producto </label>
+            <img src="<%= '/images/ %><%= product.image[1] %>" alt="Imagen del producto">
+            <input type="file" name="imagen">
+            <label for="imagenDelProducto">Imagen 3 del producto </label>
+            <img src="<%= '/images/ %><%= product.image[2] %>" alt="Imagen del producto">
+            <input type="file" name="imagen">
+            <label for="imagenDelProducto">Imagen 4 del producto </label>
+            <img src="<%= '/images/ %><%= product.image[3] %>" alt="Imagen del producto">
+            <input type="file" name="imagen">
+          <br>
           <button type="submit" class="boton" required>Guardar</button>
         </form>
     </main>
