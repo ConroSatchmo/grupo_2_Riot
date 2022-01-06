@@ -28,12 +28,12 @@ const createProductController = {
     res.redirect("/products");
   },
   edit: (req, res) => {
-    const id = req.params.id;
+    const id = Number(req.params.id);
     const productToEdit = products.filter((product) => product.id === id);
     res.render("editProduct", { product: productToEdit[0] });
   },
   update: (req, res) => {
-    const id = req.params.id;
+    const id = Number(req.params.id);
     let image;
     const { nombreDeProducto, descripcion, color, marca, precio, imagen } =
       req.body;

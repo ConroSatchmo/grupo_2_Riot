@@ -11,24 +11,24 @@
     <main>
       <section>
         <div class="mensaje">
-          <h2>Editá producto <%= products.name %></h2>
+          <h2>Editá producto <%= product.name %></h2>
         </div>
         <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="nombreDeProducto">
             <label for="nombreDeProducto">Nombre de Producto</label>
-            <input type="text" name="nombreDeProducto" id="nombreDeProducto" value="<%= products.name %>" />
+            <input type="text" name="nombreDeProducto" id="nombreDeProducto" value="<%= product.name %>" />
           </div>
           <div class="marca">
             <label for="marca">Marca</label>
-            <input type="text" name="marca" id="marca" value="<%= products.brand %>" />
+            <input type="text" name="marca" id="marca" value="<%= product.brand %>" />
           </div>
           <div class="precio">
             <label for="precio">Precio</label>
-            <input type="number" name="precio" id="precio" value="<%= products.price %>" />
+            <input type="number" name="precio" id="precio" value="<%= product.price %>" />
           </div>
           <div class="color">
             <label for="color">Color del cristal</label>
-            <select name="color" id="color" value="<%= products.color %>">
+            <select name="color" id="color" value="<%= product.color %>">
               <option> Verde</option>
               <option> Azul</option>
               <option> Marrón</option>
@@ -38,7 +38,7 @@
           </div>
           <div class="descripcion">
             <textarea name="descripcion" id="descripcion" cols="30" rows="10"
-            value="<%= products.description %>">Descripción del Producto</textarea>
+            value="<%= product.description %>">Descripción del Producto</textarea>
           </div>
           <div class="imagen">
             <label for="imagenDelProducto">Imagenes del producto </label>
