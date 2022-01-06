@@ -13,8 +13,13 @@ const createProductController = {
       color: req.body.color,
       brand: req.body.marca,
       price: Number(req.body.precio),
-      images: [req.body.imagen],
+      images: [],
     };
+
+    for (let i = 0; i <= 3; i++) {
+      product.images.push(req.body.imagen);
+    }
+
     products.push(product);
     const productJSON = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, productJSON);
