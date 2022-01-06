@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-
+const imagesPath = path.join(__dirname, "../public/images/");
 const productsFilePath = path.join(__dirname, "../database/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
@@ -33,19 +33,19 @@ const createProductController = {
     products.forEach((product) => {
       if (product.id === id) {
         if (req.file) {
-          image = req.file.filename;
-          fs.unlink(imagesPath + product.images, (err) => {
+          image = req.file.originalname;
+          fs.unlink(imagesPath + product.image, (err) => {
             if (err) throw err;
             console.log(err);
           });
         }
 
-        product.name = name;
-        product.description = description;
+        product.name = nombreDeProducto;
+        product.description = descripcion;
         product.color = color;
-        product.brand = brand;
-        product.price = Number(price);
-        product.images = images || product.images;
+        product.brand = marca;
+        product.price = Number(precio);
+        product.images = imagen || product.images;
 
         const productJSON = JSON.stringify(products);
         fs.writeFileSync(productsFilePath, productJSON);
