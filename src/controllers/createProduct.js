@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const imagesPath = path.join(__dirname, "../public/images/");
+const imagesPath = path.join(__dirname, "../public/images/productos/");
 const productsFilePath = path.join(__dirname, "../database/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
@@ -34,7 +34,6 @@ const createProductController = {
       if (product.id === id) {
         if (req.file) {
           image = req.file.filename;
-          console.log(image);
           fs.unlink(imagesPath + product.image, (err) => {
             if (err) throw err;
             console.log(err);
@@ -55,18 +54,20 @@ const createProductController = {
     res.redirect("/products");
   },
   delete: (req, res) => {
-    const id = req.params.id;
+    const id = Number(req.params.id);
     const updateProducts = products.filter((product) => product.id != id);
     const productJSON = JSON.stringify(updateProducts);
+    products.forEach((product) => {
+      if (product.id === id) {
+        product.images.forEach((imagen) => {
+          fs.unlink(imagesPath + imagen, (err) => {
+            if (err) throw err;
+            console.log(err);
+          });
+        });
+      }
+    });
     fs.writeFileSync(productsFilePath, productJSON);
-    // products.forEach((product) => {
-    //   // if (product.id === id) {
-    //     fs.unlink(imagesPath + product.images, (err) => {
-    //       if (err) throw err;
-    //       console.log(err);
-    //     });
-    //   // }
-    // });
     res.redirect("/products");
   },
 };

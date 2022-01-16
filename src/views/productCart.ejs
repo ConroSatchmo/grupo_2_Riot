@@ -1,78 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head', {nameStyle: 'productCart', titleHTML:
+    'Cart'}) %>
+  </head>
 
-<head>
-    <%- include('./partials/head', {nameStyle: 'productCart', titleHTML: 'Cart'}) %> 
-</head>
-
-<body>
-    <%- include('./partials/header') %> 
+  <body>
+    <%- include('./partials/header') %>
 
     <div class="small-container cart-page">
+      <table>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                src="/images/productos/0RB2140__902_000A.jpg"
+                alt="anteojo 1"
+                class="img-cart"
+              />
+              <div>
+                <p>RayBan Wayfarer</p>
+                <small>Precio $15.500</small>
+                <a href="">Borrar</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" /></td>
+          <td>$15.500</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cart-info">
+              <img
+                src="/images/productos/0RB4098__710_71_000A.jpg"
+                alt="anteojo 1"
+                class="img-cart"
+              />
+              <div>
+                <p>RayBan Jackie Ohh</p>
+                <small>Precio $15.500</small>
+                <a href="">Borrar</a>
+              </div>
+            </div>
+          </td>
+          <td><input type="number" value="1" /></td>
+          <td>$15.500</td>
+        </tr>
+      </table>
+      <div class="precio-total">
         <table>
-            <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="/images/0RB2140__902_000A.jpg" alt="anteojo 1" class="img-cart" />
-                        <div>
-                            <p>RayBan Wayfarer</p>
-                            <small>Precio $15.500</small>
-                            <a href="">Borrar</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1" /></td>
-                <td>$15.500</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="/images/0RB4098__710_71_000A.jpg" alt="anteojo 1" class="img-cart" />
-                        <div>
-                            <p>RayBan Jackie Ohh</p>
-                            <small>Precio $15.500</small>
-                            <a href="">Borrar</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1" /></td>
-                <td>$15.500</td>
-            </tr>
+          <tr>
+            <td>Subtotal</td>
+            <td>$31.000</td>
+          </tr>
+          <tr>
+            <td>
+              Envío
+              <select>
+                <option>Correo Argentino</option>
+                <option>Oca Express</option>
+                <option>Moto</option>
+              </select>
+            </td>
+            <td>$3.000</td>
+          </tr>
+          <tr>
+            <td class="total-total">TOTAL</td>
+            <td class="total-total">$34.000</td>
+          </tr>
+          <tr>
+            <td><a href="/" class="btn">Finalizar Compra</a></td>
+          </tr>
         </table>
-        <div class="precio-total">
-            <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>$31.000</td>
-                </tr>
-                <tr>
-                    <td>
-                        Envío
-                        <select>
-                            <option>Correo Argentino</option>
-                            <option>Oca Express</option>
-                            <option>Moto</option>
-                        </select>
-                    </td>
-                    <td>$3.000</td>
-                </tr>
-                <tr>
-                    <td class="total-total">TOTAL</td>
-                    <td class="total-total">$34.000</td>
-                </tr>
-                <tr>
-                    <td><a href="/" class="btn">Finalizar Compra</a></td>
-                </tr>
-            </table>
-        </div>
+      </div>
     </div>
 
-    <%- include('./partials/footer') %> 
-</body>
-
+    <%- include('./partials/footer') %>
+  </body>
 </html>
