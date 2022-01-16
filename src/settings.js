@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
-// app.use(logger("dev"));
+app.use(logger("dev"));
 
 // Static
 const publicPath = path.resolve(__dirname, "./public");
