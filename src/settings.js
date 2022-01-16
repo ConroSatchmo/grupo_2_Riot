@@ -32,8 +32,8 @@ app.use("/products", productDetailRouter);
 const productCartRouter = require("./routes/productCart");
 app.use("/productCart", productCartRouter);
 
-const createProductRouter = require("./routes/createProduct");
-app.use("/createProduct", createProductRouter);
+// const createProductRouter = require("./routes/createProduct");
+// app.use("/createProduct", createProductRouter);
 
 module.exports = app;
 

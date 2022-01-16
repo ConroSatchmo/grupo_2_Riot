@@ -59,14 +59,14 @@ const createProductController = {
     const updateProducts = products.filter((product) => product.id != id);
     const productJSON = JSON.stringify(updateProducts);
     fs.writeFileSync(productsFilePath, productJSON);
-    products.forEach((product) => {
-      if (product.id === id) {
-        fs.unlink(imagesPath + product.image, (err) => {
-          if (err) throw err;
-          console.log(err);
-        });
-      }
-    });
+    // products.forEach((product) => {
+    //   // if (product.id === id) {
+    //     fs.unlink(imagesPath + product.images, (err) => {
+    //       if (err) throw err;
+    //       console.log(err);
+    //     });
+    //   // }
+    // });
     res.redirect("/products");
   },
 };
