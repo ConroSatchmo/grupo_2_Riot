@@ -58,10 +58,12 @@
                     </input>
                     <br>
                     <a href="/products/edit/<%= product.id %>">Editar</a>
-                <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                    <button type="submit" class="btn">Eliminar</button>
-                </form>
-                </div>    
+                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST"
+                        style="display: inline-flex">
+
+                        <button type="submit" class="btn" onclick="pregunta()" value="Enviar">Eliminar</button>
+                    </form>
+                </div>
             </div>
         </div>
         <script>
@@ -79,6 +81,11 @@
             }
             SmallImg[3].onclick = function () {
                 ProductImg.src = SmallImg[3].src;
+            }
+            function pregunta() {
+                if (confirm("¿Estas seguro que deseas eliminar este producto?")) {
+                    document.tuformulario.submit();
+                }
             }
         </script>
         <%- include('./partials/footer') %>
