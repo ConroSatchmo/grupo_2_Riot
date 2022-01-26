@@ -129,6 +129,16 @@
       "password": "$2a$10$80xYp6nax0FhP9/G9nHw6ed8f54Ug5JIbqXaVIo.Sr2NWne5YjIuu",
       "category": "usuario",
       "image": "1643224479227.jpg"
+    },
+    {
+      "id": "18c6dff7-e539-4d34-aead-d96c60843eff",
+      "firstName": "Conrado",
+      "lastName": "negrin",
+      "email": "conradonegrin@gmail.com",
+      "user": "Conro10",
+      "password": "$2a$10$M2LME3bmQAHjI0caWt3tmOmUE3Ss4J5MuAokCHxjE4OciwSq9zSWe",
+      "category": "usuario",
+      "image": "1643227459625.jpg"
     }
   ],
   "products": [
@@ -458,7 +468,7 @@
       "id": 24,
       "name": "Ray Ban Meteor RB 2168",
       "description": "Infect/inflm reaction due to int fix of left radius, subs",
-      "color": "Ray Ban",
+      "color": "Negro",
       "brand": "Lisinopril and Hydrochlorothiazide",
       "price": 18.1,
       "images": [

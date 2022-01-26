@@ -31,9 +31,10 @@
           <div class="color">
             <label for="color">Color del cristal</label>
             <select name="color" id="color">
-              <% colors.forEach(color => { %>
-              <option <%= product.color == color ? 'selected' : '' %>><%= color %></option>
-              <% }) %>
+              <% colors.forEach(color=> { %>
+                <option <%=product.color==color ? 'selected' : '' %>><%= color %>
+                </option>
+                <% }) %>
             </select>
           </div>
           <div class="descripcion">
