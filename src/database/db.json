@@ -119,6 +119,16 @@
       "password": "$2a$10$mhD1hj6WaT1e17iYhN8jces74xSNX22BvGHnAt0QWaDNLPebKp0ga",
       "category": "usuario",
       "image": "1643214602609.png"
+    },
+    {
+      "id": "c2381ce8-dff7-41d5-b923-7e5522aa3fd3",
+      "firstName": "Juan Manuel",
+      "lastName": "Pereyra",
+      "email": "jmanuelpereyra@gmail.com",
+      "user": "jmanuelpereyra",
+      "password": "$2a$10$80xYp6nax0FhP9/G9nHw6ed8f54Ug5JIbqXaVIo.Sr2NWne5YjIuu",
+      "category": "usuario",
+      "image": "1643224479227.jpg"
     }
   ],
   "products": [
