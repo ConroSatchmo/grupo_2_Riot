@@ -25,8 +25,8 @@ app.use(express.static(publicPath));
 const homeRouter = require("./routes/home");
 app.use("/", homeRouter);
 
-const authRouter = require("./routes/auth");
-app.use("/auth", authRouter);
+const userRouter = require("./routes/users");
+app.use("/users", userRouter);
 
 const productDetailRouter = require("./routes/products");
 app.use("/products", productDetailRouter);
