@@ -22,7 +22,7 @@ const userController = require("../controllers/users");
 
 router.get("/login", userLogedMiddleware, userController.renderLogin);
 router.get("/register", userLogedMiddleware, userController.renderRegister);
-router.get('/logout', userController.logout);
+router.get('/logout', guestMiddleware, userController.logout);
 
 router.post('/register', upload.single('avatar'), userController.register);
 router.post('/login', userController.login);
