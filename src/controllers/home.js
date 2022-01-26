@@ -6,8 +6,8 @@ const homeController = {
     renderHome: (req, res) => {
         const productos = db.products.select()
         if(req.session.user){
-            const {firstName, lastName, email, user, category, image} = db.users.selectById(req.session.user)
-            const userData = {firstName, lastName, email, user, category, image}
+            const userData = req.session.user;
+            // console.log(req.cookies.user);
             res.render('home', {
                 user: userData,
                 productos

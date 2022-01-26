@@ -17,6 +17,9 @@ tables.forEach(table => {
         selectById: (id) => {
             return db[table].find(data => data.id == id)
         },
+        selectByField: (field, value) => {
+            return db[table].find(data => data[field] == value)
+        },
         insert: (data) => {
             db[table].push(data)
             fs.writeFileSync(dbPath, JSON.stringify(db, null))
