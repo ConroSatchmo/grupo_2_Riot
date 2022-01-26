@@ -291,7 +291,11 @@ main h2.container-fluid {
 .modelos h3 {
   margin-left: 35%;
 }
-
+.avatar {
+  width: 200px;
+  margin: 10px;
+  margin-bottom: 40px;
+}
 /* footer */
 footer {
   border: black solid 1px;

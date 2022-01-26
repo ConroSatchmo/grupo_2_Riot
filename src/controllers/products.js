@@ -43,8 +43,6 @@ const productDetailController = {
       images: [],
     };
 
-
-
     const imagenes = req.files;
     imagenes.forEach((file) => product.images.push(file.filename));
 
