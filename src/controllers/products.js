@@ -1,9 +1,12 @@
 const path = require("path");
-const productsDB = require("./database");
+const productsDB = require("../database/index");
 
 const productDetailController = {
   renderProductDetail: (req, res) => {
-    const product = productsDB.select(req.params.id);
+    const { id } = req.params;
+    console.log(productsDB)
+    const product = productsDB.products.selectById(id);
+    console.log(product)
     res.render("productDetail", { product });
   },
   renderProducts: (req, res) => {

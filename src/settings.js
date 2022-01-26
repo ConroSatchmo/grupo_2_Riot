@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 const logger = require("morgan");
+const session = require("express-session");
 
 // Setting
 app.set("port", process.env.PORT || 3000);
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(logger("dev"));
+app.use(session({ secret: "secret", resave: false, saveUninitialized: false }));
 
 // Static
 const publicPath = path.resolve(__dirname, "./public");
