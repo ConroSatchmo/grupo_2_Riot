@@ -20,8 +20,8 @@ const upload = multer({ storage });
 
 const userController = require("../controllers/users");
 
-router.get("/login", userMiddleware(), userController.renderLogin);
-router.get("/register", userMiddleware(), userController.renderRegister);
+router.get("/login", userMiddleware, userController.renderLogin);
+router.get("/register", userMiddleware, userController.renderRegister);
 router.get('/logout', userController.logout);
 
 router.post('/register', upload.single('avatar'), userController.register);

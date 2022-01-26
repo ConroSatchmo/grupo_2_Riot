@@ -14,14 +14,14 @@ app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Middleware
+app.use(session({ secret: "secret", resave: false, saveUninitialized: true,}));
 app.use(express.json());
+app.use(cookieParser());
+app.use(auth);
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
-app.use(cookieParser());
 app.use(logger("dev"));
-app.use(session({ secret: "secret", resave: false, saveUninitialized: true,}));
 app.use(recordame);
-app.use(auth);
 
 // Static
 const publicPath = path.resolve(__dirname, "./public");
