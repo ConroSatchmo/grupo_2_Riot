@@ -19,17 +19,17 @@ tables.forEach(table => {
         },
         insert: (data) => {
             db[table].push(data)
-            fs.writeFileSync(dbPath, JSON.stringify(db, null, 4))
+            fs.writeFileSync(dbPath, JSON.stringify(db, null))
         },
         update: (id, data) => {
             const index = db[table].findIndex(data => data.id == id)
             db[table][index] = data
-            fs.writeFileSync(dbPath, JSON.stringify(db, null, 4))
+            fs.writeFileSync(dbPath, JSON.stringify(db, null))
         },
         delete: (id) => {
             const index = db[table].findIndex(data => data.id == id)
             db[table].splice(index, 1)
-            fs.writeFileSync(dbPath, JSON.stringify(db, null, 4))
+            fs.writeFileSync(dbPath, JSON.stringify(db, null))
         }
     }
 })

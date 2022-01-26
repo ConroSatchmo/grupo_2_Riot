@@ -13,35 +13,40 @@
         <section>
           <div class="mensaje">
             <h2>Creá tu cuenta</h2>
+            <% if(locals.msg){ %>
+            <p><%= msg %></p>
+            <% } %>
           </div>
-          <form action="/users/login" method="get" class="formulario">
-            <div class="nombreyapellido">
-              <label for="nombreyapellido">Nombre y Apellido</label>
-              <input type="text" name="nombreyapellido" id="nombreyapellido" required />
+          <form action="/users/register" method="post" class="formulario" enctype="multipart/form-data">
+            <div class="nombres">
+              <label for="nombres">Nombres</label>
+              <input type="text" name="nombres" id="nombres" value="<%= locals.old && old.nombres ? old.nombres : '' %>"/>
+            </div>
+            <div class="apellidos">
+              <label for="apellidos">Apellidos</label>
+              <input type="text" name="apellidos" id="apellidos" value="<%= locals.old && old.apellidos ? old.apellidos : '' %>"/>
             </div>
             <div class="email">
               <label for="email">E-mail</label>
-              <input type="email" name="email" id="email" required />
-            </div>
-            <div class="domicilio">
-              <label for="domicilio">Domicilio</label>
-              <input type="text" name="domicilio" id="domicilio" required />
+              <input type="email" name="email" id="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
             </div>
             <div class="usuario">
               <label for="usuario">Nombre de usuari@</label>
-              <input type="text" name="usuario" id="usuario" required />
+              <input type="text" name="usuario" id="usuario" value="<%= locals.old && old.usuario ? old.usuario : '' %>"/>
             </div>
-            <div class="contrasenia">
-              <div class="contrasenia1">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" required pattern=".{8,}"
-                  title="La contraseña debe tener un mínimo de 8 caracteres.">
-              </div>
-              <div class="contrasenia2">
-                <label for="confirm">Confirmar contraseña</label>
-                <input type="password" name="confirm" id="confirm" required pattern=".{8,}"
-                  title="La contraseña debe tener un mínimo de 8 caracteres.">
-              </div>
+            <div class="contrasenia1">
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" id="password"
+                title="La contraseña debe tener un mínimo de 8 caracteres.">
+            </div>
+            <div class="contrasenia2">
+              <label for="confirm">Confirmar contraseña</label>
+              <input type="password" name="confirm" id="confirm"
+                title="La contraseña debe tener un mínimo de 8 caracteres.">
+            </div>
+            <div class="avatar">
+              <label for="avatar">Avatar</label>
+              <input type="file" name="avatar" id="avatar">
             </div>
             <button type="submit" class="boton" required>Crear</button>
           </form>

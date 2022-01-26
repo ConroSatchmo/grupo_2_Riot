@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const imagesPath = path.join(__dirname, "../public/images/productos/");
-const productsFilePath = path.join(__dirname, "../database/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+// const productsFilePath = path.join(__dirname, "../database/products.json");
+// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsDB = require("../database/index");
 
 const productDetailController = {
@@ -14,14 +14,14 @@ const productDetailController = {
     res.render("productDetail", { product });
   },
   renderProducts: (req, res) => {
-    const products = productsDB.select();
+    const products = productsDB.products.select();
     res.render("products", { products });
   },
   renderProductCreate: (req, res) => {
     res.render("createProduct");
   },
   renderProductEdit: (req, res) => {
-    const product = productsDB.select(req.params.id);
+    const product = productsDB.products.select(req.params.id);
     res.render("editProduct", { product });
   },
   store: (req, res) => {
@@ -34,6 +34,8 @@ const productDetailController = {
       price: Number(req.body.precio),
       images: [],
     };
+
+
 
     const imagenes = req.files;
     imagenes.forEach((file) => product.images.push(file.filename));
