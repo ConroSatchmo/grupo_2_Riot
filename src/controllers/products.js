@@ -8,9 +8,9 @@ const productsDB = require("../database/index");
 const productDetailController = {
   renderProductDetail: (req, res) => {
     const { id } = req.params;
-    console.log(productsDB);
+    // console.log(productsDB);
     const product = productsDB.products.selectById(id);
-    console.log(product);
+    // console.log(product);
     res.render("productDetail", { product });
   },
   renderProducts: (req, res) => {
@@ -21,8 +21,16 @@ const productDetailController = {
     res.render("createProduct");
   },
   renderProductEdit: (req, res) => {
-    const product = productsDB.products.select(req.params.id);
-    res.render("editProduct", { product });
+    const product = productsDB.products.selectById(req.params.id);
+    const products = productsDB.products.select();
+    let colors = products.map((product) => product.color);
+
+    let hash = {};
+    colors = colors.filter(color => hash[color] ? false : hash[color] = true)
+
+    // console.log(colors);
+
+    res.render("editProduct", { product, colors });
   },
   store: (req, res) => {
     const product = {
