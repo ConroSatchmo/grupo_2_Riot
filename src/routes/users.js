@@ -4,7 +4,7 @@ const multer = require("multer");
 const path = require("path");
 
 const guestMiddleware = require("../middlewares/guestMiddleware");
-const userMiddleware = require("../middlewares/userMiddleware");
+const userLogedMiddleware = require("../middlewares/userMiddleware");
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -20,8 +20,8 @@ const upload = multer({ storage });
 
 const userController = require("../controllers/users");
 
-router.get("/login", userMiddleware, userController.renderLogin);
-router.get("/register", userMiddleware, userController.renderRegister);
+router.get("/login", userLogedMiddleware, userController.renderLogin);
+router.get("/register", userLogedMiddleware, userController.renderRegister);
 router.get('/logout', userController.logout);
 
 router.post('/register', upload.single('avatar'), userController.register);
