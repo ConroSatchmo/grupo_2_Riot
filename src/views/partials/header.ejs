@@ -14,11 +14,14 @@
         ></a>
         <a class="favoritos" href="#"><i class="fas fa-heart"></i></a>
         <% if(locals.user){ %>
-        <a class="perfil" href="/users/profile"><i class="fas fa-user"></i></a>
-        <a class="salir" href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
-        <p class="user-name"><%= user.user %></p>
+        <a class="perfil" href="/users/profile"
+          ><i class="fas fa-user"></i> <%= user.user %></a
+        >
+        <a class="salir" href="/users/logout"
+          ><i class="fas fa-sign-out-alt"></i
+        ></a>
         <% }else{ %>
-          <a class="usuario" href="/users/login"><i class="fas fa-user"></i></a>
+        <a class="usuario" href="/users/login"><i class="fas fa-user"></i></a>
         <% } %>
       </div>
     </div>
