@@ -21,8 +21,9 @@ const productDetailController = {
     res.render("createProduct");
   },
   renderProductEdit: (req, res) => {
-    const product = productsDB.products.select(req.params.id);
-    res.render("editProduct", { product });
+    const product = productsDB.products.selectById(req.params.id);
+    const products = productsDB.products.select();
+    res.render("editProduct", { product, products });
   },
   store: (req, res) => {
     const product = {
@@ -34,8 +35,6 @@ const productDetailController = {
       price: Number(req.body.precio),
       images: [],
     };
-
-
 
     const imagenes = req.files;
     imagenes.forEach((file) => product.images.push(file.filename));

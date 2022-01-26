@@ -11,7 +11,8 @@
     <main>
       <section>
         <div class="mensaje">
-          <h2>Editá producto: <%= product.name %></h2>
+          <h2>Editá producto: <%= product.name %>
+          </h2>
         </div>
         <br>
         <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -30,11 +31,11 @@
           <div class="color">
             <label for="color">Color del cristal</label>
             <select name="color" id="color" value="<%= product.color %>">
-              <option> Verde</option>
-              <option> Azul</option>
-              <option> Marrón</option>
-              <option> Negro</option>
-              <option> Magenta</option>
+              <% products.forEach(prod=> { %>
+
+                <option <%=product.color==prod.color ? 'selected' : '' %>><%= prod.color %>
+                </option>
+                <% }) %>
             </select>
           </div>
           <div class="descripcion">
@@ -42,13 +43,17 @@
           </div>
           <div class="imagen">
             <label for="imagen">Imagenes del producto</label>
-            <img src="<%= '/images/productos/' %><%= product.images[0] %>" alt="Imagen 1 del producto" class="img-miniatura">
-            <img src="<%= '/images/productos/' %><%= product.images[1] %>" alt="Imagen 2 del producto" class="img-miniatura">
-            <img src="<%= '/images/productos/' %><%= product.images[2] %>" alt="Imagen 3 del producto" class="img-miniatura">
-            <img src="<%= '/images/productos/' %><%= product.images[3] %>" alt="Imagen 4 del producto" class="img-miniatura">
-          <br>
-          <br>
-          <button type="submit" class="boton" required>Guardar</button>
+            <img src="<%= '/images/productos/' %><%= product.images[0] %>" alt="Imagen 1 del producto"
+              class="img-miniatura">
+            <img src="<%= '/images/productos/' %><%= product.images[1] %>" alt="Imagen 2 del producto"
+              class="img-miniatura">
+            <img src="<%= '/images/productos/' %><%= product.images[2] %>" alt="Imagen 3 del producto"
+              class="img-miniatura">
+            <img src="<%= '/images/productos/' %><%= product.images[3] %>" alt="Imagen 4 del producto"
+              class="img-miniatura">
+            <br>
+            <br>
+            <button type="submit" class="boton" required>Guardar</button>
         </form>
     </main>
 
