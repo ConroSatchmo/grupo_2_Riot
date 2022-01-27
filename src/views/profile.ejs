@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="/css/framework.css" />
-    <%- include('./partials/head', {nameStyle: 'styles2'}) %>
+    <%- include('./partials/head', {nameStyle: 'styles'}) %>
   </head>
   <%- include('./partials/header') %>
 	<!-- Container -->
@@ -10,7 +10,9 @@
 		<div class="row">
 			<div class="col-md-3">
 				<h2>¡Hola <%= user.firstName %> <%= user.lastName %>! </h2>
-				<img class= "avatar" src="/images/users/<%= user.image %> ">
+				<div class="avatardiv">
+					<img class= "avatar" src="/images/users/<%= user.image %> ">
+				</div>
 				<br>
                 <div>Email: <%= user.email %> </div>
 				<br>

@@ -15,7 +15,11 @@
           <a class="avatar" href="/users/profile">
             <h4 class="user">
               <%= user.user %>
-            </h4><img class="avatarimg" src="/images/users/<%= user.image %> "></i>
+            </h4>
+            <div class="avatardiv">
+
+              <img class="avatarimg" src="/images/users/<%= user.image %> ">
+            </div>
           </a>
           <a class="salir" href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
           <% }else{ %>
