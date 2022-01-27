@@ -56,7 +56,7 @@ const userController = {
         res.render("login", { msg: "Contraseña incorrecta" });
       }
     } else {
-      res.render("login", { msg: "Usuario no registrado" });
+      res.render("login", { msg: "Email o contraseña incorrecta" });
     }
   },
   logout: (req, res) => {

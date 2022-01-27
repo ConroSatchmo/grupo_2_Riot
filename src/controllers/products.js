@@ -1,16 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const imagesPath = path.join(__dirname, "../public/images/productos/");
-// const productsFilePath = path.join(__dirname, "../database/products.json");
-// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsDB = require("../database/index");
+const {v4: uuidv4} = require("uuid");
 
 const productDetailController = {
   renderProductDetail: (req, res) => {
     const { id } = req.params;
-    // console.log(productsDB);
     const product = productsDB.products.selectById(id);
-    // console.log(product);
+
     res.render("productDetail", { product });
   },
   renderProducts: (req, res) => {
@@ -28,13 +26,11 @@ const productDetailController = {
     let hash = {};
     colors = colors.filter(color => hash[color] ? false : hash[color] = true)
 
-    // console.log(colors);
-
     res.render("editProduct", { product, colors });
   },
   store: (req, res) => {
     const product = {
-      id: Number(req.body.id),
+      id: uuidv4(),
       name: req.body.nombreDeProducto,
       description: req.body.descripcion,
       color: req.body.color,
@@ -46,57 +42,50 @@ const productDetailController = {
     const imagenes = req.files;
     imagenes.forEach((file) => product.images.push(file.filename));
 
-    products.push(product);
-    const productJSON = JSON.stringify(products);
-    fs.writeFileSync(productsFilePath, productJSON);
+    productsDB.products.insert(product);
 
     res.redirect("/products");
   },
   update: (req, res) => {
-    const id = Number(req.params.id);
-    let image;
-    const { nombreDeProducto, descripcion, color, marca, precio, imagen } =
-      req.body;
-    products.forEach((product) => {
-      if (product.id === id) {
-        if (req.file) {
-          image = req.file.filename;
-          fs.unlink(imagesPath + product.image, (err) => {
-            if (err) throw err;
-            console.log(err);
-          });
-        }
+    const { id } = req.params;
+    const product = productsDB.products.selectById(id);
+    const imagenes = req.files;
 
-        product.name = nombreDeProducto;
-        product.description = descripcion;
-        product.color = color;
-        product.brand = marca;
-        product.price = Number(precio);
-        product.images = imagen || product.images;
-
-        const productJSON = JSON.stringify(products);
-        fs.writeFileSync(productsFilePath, productJSON);
+    if (imagenes.length > 0) {
+      for(let i = 0; i < imagenes.length; i++) {
+        fs.unlinkSync(path.join(imagesPath, product.images[i]));
       }
-    });
+      imagenes.forEach((file) => product.images.push(file.filename));
+    }
+
+    product.name = req.body.nombreDeProducto;
+    product.description = req.body.descripcion;
+    product.color = req.body.color;
+    product.brand = req.body.marca;
+    product.price = Number(req.body.precio);
+    
+    productsDB.products.update(product);
+
     res.redirect("/products");
   },
   delete: (req, res) => {
-    const id = Number(req.params.id);
-    const updateProducts = products.filter((product) => product.id != id);
-    const productJSON = JSON.stringify(updateProducts);
-    products.forEach((product) => {
-      if (product.id === id) {
-        product.images.forEach((imagen) => {
-          fs.unlink(imagesPath + imagen, (err) => {
-            if (err) throw err;
-            console.log(err);
-          });
-        });
-      }
+    const {id} = req.params;
+
+    const product = productsDB.products.selectById(id);
+    console.log(product);
+    product.images.forEach((image) => {
+      fs.unlinkSync(imagesPath + image);
     });
-    fs.writeFileSync(productsFilePath, productJSON);
+
+    productsDB.products.delete(id);
+
     res.redirect("/products");
   },
+  renderDelete: (req, res) => {
+    const { id } = req.params;
+    const product = productsDB.products.selectById(id);
+    res.render("productdelete", { product });
+  }
 };
 
 module.exports = productDetailController;

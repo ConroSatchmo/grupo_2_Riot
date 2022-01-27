@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head', {nameStyle: 'productDetail' }) %>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <div class="small-container single-product">
+
+        <h2>Desea eliminar el producto?</h2>
+        <div class="buttons">
+            <a href="/products/<%= product.id %>" class="btn">Cancelar</a>
+            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn">Eliminar</button>
+            </form>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
