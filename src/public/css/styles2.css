@@ -202,6 +202,17 @@ main h2.container-fluid {
   align-items: center;
   gap: 0.5rem;
 }
+
+a.avatar {
+  display: flex;
+  flex-direction: row;
+}
+a .avatarimg {
+  margin-left: 15px;
+  margin-top: 5px;
+  width: 40px;
+  border-radius: 50%;
+}
 .precio {
   color: black;
   font-size: 18px;
