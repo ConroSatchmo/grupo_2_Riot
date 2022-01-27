@@ -3,6 +3,7 @@ const db = require("../database");
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
+const { validationResult } = require("express-validator");
 
 const userController = {
   renderLogin: (req, res) => {
@@ -18,6 +19,14 @@ const userController = {
   register: (req, res) => {
     const users = db.users.select();
     const user = users.find((user) => user.email === req.body.email);
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("register", {
+        errors: resultValidation.mapped(),
+        old: req.body,
+      });
+    }
     if (!user) {
       const image = req.file ? req.file.filename : null;
       const user = {
