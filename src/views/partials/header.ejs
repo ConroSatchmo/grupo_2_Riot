@@ -9,20 +9,18 @@
         <button><i class="fas fa-search"></i></button>
       </div>
       <div class="iconos">
-        <a class="carrito" href="/productCart"
-          ><i class="fas fa-shopping-cart"></i
-        ></a>
+        <a class="carrito" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
         <a class="favoritos" href="#"><i class="fas fa-heart"></i></a>
         <% if(locals.user){ %>
-        <a class="perfil" href="/users/profile"
-          ><i class="fas fa-user"></i> <%= user.user %></a
-        >
-        <a class="salir" href="/users/logout"
-          ><i class="fas fa-sign-out-alt"></i
-        ></a>
-        <% }else{ %>
-        <a class="usuario" href="/users/login"><i class="fas fa-user"></i></a>
-        <% } %>
+          <a class="avatar" href="/users/profile">
+            <h4 class="user">
+              <%= user.user %>
+            </h4><img class="avatarimg" src="/images/users/<%= user.image %> "></i>
+          </a>
+          <a class="salir" href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
+          <% }else{ %>
+            <a class="usuario" href="/users/login"><i class="fas fa-user"></i></a>
+            <% } %>
       </div>
     </div>
     <nav class="nav-bar">

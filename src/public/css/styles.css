@@ -46,6 +46,18 @@ body {
   font-size: 25px;
   transition: color 450ms;
 }
+
+a.avatar {
+  display: flex;
+  flex-direction: row;
+}
+a .avatarimg {
+  margin-left: 15px;
+  margin-top: 5px;
+  width: 40px;
+  border-radius: 50%;
+}
+
 .iconos a:hover {
   color: salmon;
 }
