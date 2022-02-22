@@ -1,6 +1,5 @@
 const path = require("path");
-const db = require("../database");
-const { v4: uuidv4 } = require("uuid");
+const db = require("../database/models");
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const { validationResult } = require("express-validator");

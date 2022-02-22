@@ -20,7 +20,11 @@
           </div>
           <div class="marca">
             <label for="marca">Marca</label>
-            <input type="text" name="marca" id="marca" required />
+            <select name="marca" id="marca">
+              <% brands.forEach(brand => { %>
+                <option value="<%- brand.id %>"><%- brand.name %></option>
+              <% }) %>
+            </select>
           </div>
           <div class="precio">
             <label for="precio">Precio</label>
@@ -29,11 +33,9 @@
           <div class="color">
             <label for="color">Color del cristal</label>
             <select name="color" id="color">
-              <option> Verde</option>
-              <option> Azul</option>
-              <option> Marrón</option>
-              <option> Negro</option>
-              <option> Magenta</option>
+              <% colors.forEach(color => { %>
+                <option value="<%- color.id %>"><%- color.name %></option>
+              <% }) %>
             </select>
           </div>
           <div class="descripcion">

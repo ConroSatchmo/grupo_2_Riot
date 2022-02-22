@@ -1,10 +1,9 @@
 // const path = require('path');
-const productsDB = require('./database');
-const db = require('../database');
+const db = require('../database/models');
 
 const homeController = {
-    renderHome: (req, res) => {
-        const productos = db.products.select()
+    renderHome: async (req, res) => {
+        const productos = await db.Products.findAll();
         if(req.session.user){
             const userData = req.session.user;
             // console.log(req.cookies.user);

@@ -1,15 +1,22 @@
-const db = require('../database');
+const db = require('../database/models');
 
-const auth = (req, res, next) => {
+const auth = async (req, res, next) => {
     res.locals.isLogged = false;
 
 	let emailInCookie = req.cookies.user;
     // console.log(emailInCookie);
-	let userFromCookie = db.users.selectByField('email', emailInCookie);
+	
     // console.log(userFromCookie);
 
-	if (userFromCookie) {
-		req.session.user = userFromCookie;
+	if (emailInCookie != undefined) {
+		let userFromCookie = await db.Users.findOne({
+			where: {
+				email: emailInCookie
+			}
+		});
+		if(userFromCookie){
+			req.session.user = userFromCookie;
+		}
 	}
 
 	if (req.session.user) {

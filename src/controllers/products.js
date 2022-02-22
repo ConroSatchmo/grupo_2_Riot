@@ -1,54 +1,66 @@
 const fs = require("fs");
 const path = require("path");
 const imagesPath = path.join(__dirname, "../public/images/productos/");
-const productsDB = require("../database/index");
-const {v4: uuidv4} = require("uuid");
+const db = require("../database/models");
 
 const productDetailController = {
-  renderProductDetail: (req, res) => {
+  renderProductDetail: async (req, res) => {
     const { id } = req.params;
-    const product = productsDB.products.selectById(id);
+    const product = await db.Products.findByPk(id);
 
     res.render("productDetail", { product });
   },
-  renderProducts: (req, res) => {
-    const products = productsDB.products.select();
+  renderProducts: async (req, res) => {
+    const products = await db.Products.findAll({
+      include: [
+        { association: "images" },
+      ]
+    });
+    console.log(products);
     res.render("products", { products });
   },
-  renderProductCreate: (req, res) => {
-    res.render("createProduct");
+  renderProductCreate: async (req, res) => {
+    const colors = await db.Colors.findAll();
+    const brands = await db.Brands.findAll();
+    res.render("createProduct", { colors, brands });
   },
-  renderProductEdit: (req, res) => {
-    const product = productsDB.products.selectById(req.params.id);
-    const products = productsDB.products.select();
-    let colors = products.map((product) => product.color);
-
-    let hash = {};
-    colors = colors.filter(color => hash[color] ? false : hash[color] = true)
+  renderProductEdit: async (req, res) => {
+    const { id } = req.params;
+    const product = await db.Products.findByPk(id);
+    const colors = await db.Colors.findAll();
 
     res.render("editProduct", { product, colors });
   },
-  store: (req, res) => {
+  store: async (req, res) => {
     const product = {
-      id: uuidv4(),
       name: req.body.nombreDeProducto,
       description: req.body.descripcion,
-      color: req.body.color,
-      brand: req.body.marca,
+      color_id: req.body.color,
+      brand_id: req.body.marca,
       price: Number(req.body.precio),
-      images: [],
     };
 
-    const imagenes = req.files;
-    imagenes.forEach((file) => product.images.push(file.filename));
+    console.log(product);
 
-    productsDB.products.insert(product);
+    let imagenes = req.files;
+    const newProduct = await db.Products.create(product);
+    
+    imagenes = imagenes.map((imagen) => ({file_name: imagen.filename, product_id: newProduct.id}))
+
+    await db.Images.bulkCreate(imagenes);
+
+    // imagenes.forEach((imagen) => {
+    //   await db.Images.create({
+    //     product_id: newProduct.id,
+    //     file_name: imagen,
+    //   });
+    // });
 
     res.redirect("/products");
   },
-  update: (req, res) => {
+  update: async (req, res) => {
     const { id } = req.params;
-    const product = productsDB.products.selectById(id);
+    const product = await db.Products.findByPk(id);
     const imagenes = req.files;
 
     if (imagenes.length > 0) {
@@ -58,32 +70,37 @@ const productDetailController = {
       imagenes.forEach((file) => product.images.push(file.filename));
     }
 
-    product.name = req.body.nombreDeProducto;
-    product.description = req.body.descripcion;
-    product.color = req.body.color;
-    product.brand = req.body.marca;
-    product.price = Number(req.body.precio);
-    
-    productsDB.products.update(product);
+    await product.update({
+      name: req.body.nombreDeProducto,
+      description: req.body.descripcion,
+      color: req.body.color,
+      brand: req.body.marca,
+      price: Number(req.body.precio),
+      images: product.images,
+    }, {
+      where: {id}
+    });
 
     res.redirect("/products");
   },
-  delete: (req, res) => {
+  delete: async (req, res) => {
     const {id} = req.params;
 
-    const product = productsDB.products.selectById(id);
+    const product = await db.Products.findByPk(id);
     console.log(product);
     product.images.forEach((image) => {
       fs.unlinkSync(imagesPath + image);
     });
 
-    productsDB.products.delete(id);
+    await db.Products.destroy({
+      where: {id}
+    });
 
     res.redirect("/products");
   },
-  renderDelete: (req, res) => {
+  renderDelete: async (req, res) => {
     const { id } = req.params;
-    const product = productsDB.products.selectById(id);
+    const product = await db.Products.findByPk(id);
     res.render("productdelete", { product });
   }
 };
