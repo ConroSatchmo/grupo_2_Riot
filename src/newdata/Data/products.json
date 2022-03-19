@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Dolce Gabbana 2166",
-    "description": "Nondisp Maisonneuve's fx r leg, 7thJ",
+    "description": "Nondisp Maisonneuves fx r leg, 7thJ",
     "color": "Verde",
     "brand": "Dolce Gabbana",
     "price": 15.2,
@@ -157,8 +157,8 @@
     "id": 12,
     "name": "Emporio Armani 4127",
     "description": "Hang-glider crash injuring occupant, sequela",
-    "color": "Khaki",
-    "brand": "Magenta",
+    "color": "Magenta",
+    "brand": "Emporio Armani",
     "price": 17.5,
     "images": [
       "0EA4127__57448D_000A.jpg",
@@ -326,7 +326,7 @@
     "name": "Ray Ban Meteor RB 2168",
     "description": "Infect/inflm reaction due to int fix of left radius, subs",
     "color": "Negro",
-    "brand": "Lisinopril and Hydrochlorothiazide",
+    "brand": "Ray Ban",
     "price": 18.1,
     "images": [
       "0RB2168__902_32_000A.jpg",
@@ -354,7 +354,7 @@
     "name": "Ray Ban Aviator Classic",
     "description": "Laceration w fb of left eyelid and periocular area, subs",
     "color": "Naranja",
-    "brand": "Zosyn",
+    "brand": "Ray Ban",
     "price": 16.5,
     "images": [
       "0RB3025__001_33_000A.jpg",
@@ -381,7 +381,7 @@
     "id": 28,
     "name": "Ray Ban general",
     "description": "Unspecified sprain of right middle finger, subs encntr",
-    "color": "Green",
+    "color": "Verde",
     "brand": "Ray Ban",
     "price": 17.2,
     "images": [
@@ -395,7 +395,7 @@
     "id": 29,
     "name": "Ray Ban general pop",
     "description": "Strain of musc/fasc/tend at wrs/hnd lv, left hand, init",
-    "color": "Violet",
+    "color": "Violeta",
     "brand": "Ray Ban",
     "price": 19.3,
     "images": [
@@ -409,7 +409,7 @@
     "id": 30,
     "name": "Ray Ban RB3607",
     "description": "Other iridocyclitis",
-    "color": "Green",
+    "color": "Verde",
     "brand": "Ray Ban",
     "price": 16.3,
     "images": [
@@ -423,7 +423,7 @@
     "id": 31,
     "name": "Ray Ban RB3654",
     "description": "Milt op w acc deton onboard marine weapons, civ, sequela",
-    "color": "Teal",
+    "color": "Azul",
     "brand": "Ray Ban",
     "price": 17.3,
     "images": [
@@ -437,7 +437,7 @@
     "id": 32,
     "name": "Ray Ban JACKIE OHH II",
     "description": "Corrosion of first degree of unsp thumb (nail), subs encntr",
-    "color": "Red",
+    "color": "Rojo",
     "brand": "Ray Ban",
     "price": 14.7,
     "images": [
@@ -451,7 +451,7 @@
     "id": 33,
     "name": "Ray Ban CATS 5000 CLASSIC",
     "description": "Unsp injury of dorsal vein of unspecified foot, init encntr",
-    "color": "Mauv",
+    "color": "Negro",
     "brand": "Ray Ban",
     "price": 18.3,
     "images": [
@@ -465,7 +465,7 @@
     "id": 34,
     "name": "Ray Ban RB8060",
     "description": "Postproc hematoma and seroma of the spleen fol a procedure",
-    "color": "Orange",
+    "color": "Naranja",
     "brand": "Ray Ban",
     "price": 14.9,
     "images": [
@@ -479,7 +479,7 @@
     "id": 35,
     "name": "Ray Ban RB8061",
     "description": "Nondisplaced fracture of capitate bone, right wrist, sequela",
-    "color": "Orange",
+    "color": "Naranja",
     "brand": "Ray Ban",
     "price": 15.8,
     "images": [
@@ -493,7 +493,7 @@
     "id": 36,
     "name": "Vogue VJ2004",
     "description": "Osteochondrosis (juvenile) of carpal lunate, left hand",
-    "color": "Fuscia",
+    "color": "Violeta",
     "brand": "Vogue",
     "price": 15.5,
     "images": [
@@ -521,7 +521,7 @@
     "id": 38,
     "name": " Vogue 0VO4105S",
     "description": "Other superficial bite of right upper arm, sequela",
-    "color": "Marron",
+    "color": "Marrón",
     "brand": "Vogue",
     "price": 25.5,
     "images": [
@@ -535,7 +535,7 @@
     "id": 39,
     "name": "Vogue 0VO4106S",
     "description": "Phlebitis and thrombophlebitis of unspecified iliac vein",
-    "color": "Marron claro",
+    "color": "Marrón",
     "brand": "Vogue",
     "price": 24.5,
     "images": [
@@ -605,7 +605,7 @@
     "id": 44,
     "name": "Vogue 0VO5211S",
     "description": "Sublux of proximal interphaln joint of r rng fngr, sequela",
-    "color": "Gris humo ",
+    "color": "Gris",
     "brand": "Vogue",
     "price": 18.2,
     "images": [
