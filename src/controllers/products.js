@@ -6,15 +6,15 @@ const db = require("../database/models");
 const productDetailController = {
   renderProductDetail: async (req, res) => {
     const { id } = req.params;
-    const product = await db.Products.findByPk(id);
+    const product = await db.Products.findByPk(id, {
+      include: [{ association: "images" }],
+    });
 
     res.render("productDetail", { product });
   },
   renderProducts: async (req, res) => {
     const products = await db.Products.findAll({
-      include: [
-        { association: "images" },
-      ]
+      include: [{ association: "images" }],
     });
     console.log(products);
     res.render("products", { products });
@@ -44,8 +44,11 @@ const productDetailController = {
 
     let imagenes = req.files;
     const newProduct = await db.Products.create(product);
-    
-    imagenes = imagenes.map((imagen) => ({file_name: imagen.filename, product_id: newProduct.id}))
+
+    imagenes = imagenes.map((imagen) => ({
+      file_name: imagen.filename,
+      product_id: newProduct.id,
+    }));
 
     await db.Images.bulkCreate(imagenes);
 
@@ -64,27 +67,30 @@ const productDetailController = {
     const imagenes = req.files;
 
     if (imagenes.length > 0) {
-      for(let i = 0; i < imagenes.length; i++) {
+      for (let i = 0; i < imagenes.length; i++) {
         fs.unlinkSync(path.join(imagesPath, product.images[i]));
       }
       imagenes.forEach((file) => product.images.push(file.filename));
     }
 
-    await product.update({
-      name: req.body.nombreDeProducto,
-      description: req.body.descripcion,
-      color: req.body.color,
-      brand: req.body.marca,
-      price: Number(req.body.precio),
-      images: product.images,
-    }, {
-      where: {id}
-    });
+    await product.update(
+      {
+        name: req.body.nombreDeProducto,
+        description: req.body.descripcion,
+        color: req.body.color,
+        brand: req.body.marca,
+        price: Number(req.body.precio),
+        images: product.images,
+      },
+      {
+        where: { id },
+      }
+    );
 
     res.redirect("/products");
   },
   delete: async (req, res) => {
-    const {id} = req.params;
+    const { id } = req.params;
 
     const product = await db.Products.findByPk(id);
     console.log(product);
@@ -93,7 +99,7 @@ const productDetailController = {
     });
 
     await db.Products.destroy({
-      where: {id}
+      where: { id },
     });
 
     res.redirect("/products");
@@ -102,7 +108,7 @@ const productDetailController = {
     const { id } = req.params;
     const product = await db.Products.findByPk(id);
     res.render("productdelete", { product });
-  }
+  },
 };
 
 module.exports = productDetailController;

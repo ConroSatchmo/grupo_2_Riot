@@ -60,20 +60,20 @@
           <% for (let i=0; i < 8; i++) { %> <% const
           idP=Math.floor(Math.random() * (productos.length - 1)) %> <%
           productos.forEach(producto=> { %> <% if (producto.id==idP) { %>
-          <a href="/products/<%- producto.id %>">
+          <a href="/products/<%= producto.id %>">
             <div class="img1 img-des">
               <img
-                src="/images/productos/<%- producto.images[0] %>"
+                src="/images/productos/<%= producto.images[0].file_name %>"
                 width="100%"
                 class="small-img"
               />
             </div>
             <section class="info-producto">
               <section class="info-precio">
-                <p class="precio">$ <%- producto.price %>00</p>
+                <p class="precio">$ <%= producto.price %>00</p>
                 <p class="descuento">40% OFF</p>
               </section>
-              <h4 class="descripcion"><%- producto.name %></h4>
+              <h4 class="descripcion"><%= producto.name %></h4>
             </section>
           </a>
           <% }})}%>
