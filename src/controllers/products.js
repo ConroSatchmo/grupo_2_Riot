@@ -6,11 +6,12 @@ const db = require("../database/models");
 const productDetailController = {
   renderProductDetail: async (req, res) => {
     const { id } = req.params;
+    const colors = await db.Colors.findAll();
     const product = await db.Products.findByPk(id, {
       include: [{ association: "images" }, { association: "colors" }],
     });
 
-    res.render("productDetail", { product });
+    res.render("productDetail", { product, colors });
   },
   renderProducts: async (req, res) => {
     const products = await db.Products.findAll({
