@@ -7,7 +7,7 @@ const productDetailController = {
   renderProductDetail: async (req, res) => {
     const { id } = req.params;
     const product = await db.Products.findByPk(id, {
-      include: [{ association: "images" }],
+      include: [{ association: "images" }, { association: "colors" }],
     });
 
     res.render("productDetail", { product });

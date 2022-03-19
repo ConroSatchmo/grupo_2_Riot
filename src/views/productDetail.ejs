@@ -21,16 +21,20 @@
                     <img src="/images/productos/<%= product.images[0].file_name %>" width="100%" id="ProductImg" />
                     <div class="small-img-row">
                         <div class="small-img-col">
-                            <img src="/images/productos/<%= product.images[0].file_name %>" width="100%" class="small-img" />
+                            <img src="/images/productos/<%= product.images[0].file_name %>" width="100%"
+                                class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="/images/productos/<%= product.images[1].file_name %>" width="100%" class="small-img" />
+                            <img src="/images/productos/<%= product.images[1].file_name %>" width="100%"
+                                class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="/images/productos/<%= product.images[2].file_name %>" width="100%" class="small-img" />
+                            <img src="/images/productos/<%= product.images[2].file_name %>" width="100%"
+                                class="small-img" />
                         </div>
                         <div class="small-img-col">
-                            <img src="/images/productos/<%= product.images[3].file_name %>" width="100%" class="small-img" />
+                            <img src="/images/productos/<%= product.images[3].file_name %>" width="100%"
+                                class="small-img" />
                         </div>
                     </div>
                 </div>
@@ -40,14 +44,9 @@
                         <%= product.name %>
                     </h1>
                     <h4>$<%= product.price %>00</h4>
-                    <select>
-                        <option>
-                            <%= product.color %>
-                        </option>
-
-                    </select>
-
-
+                    <h4>
+                        Color <%= product.colors.name %>
+                    </h4>
                     <input type="number" value="1">
                     <a href="" class="btn">Agregar al carrito</a>
                     <h3>Detalle del producto<i class="fa fa-indent"></i>
