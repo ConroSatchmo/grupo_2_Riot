@@ -20,6 +20,7 @@ insert into user_product (id, user_id, product_id)
 values(default, default, default);
 
 
+
       
       
 
