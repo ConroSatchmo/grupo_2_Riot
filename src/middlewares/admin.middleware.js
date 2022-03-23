@@ -14,7 +14,7 @@ module.exports = asyncHandler(async (req, res, next) => {
         ]
     })
 
-    if(user.categories.name == "admin"){
+    if(user.categories.name == "Administrador"){
         next()
     }
 

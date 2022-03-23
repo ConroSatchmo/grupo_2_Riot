@@ -19,10 +19,11 @@ const storage = multer.diskStorage(
 )
 const upload = multer({ storage })
 
-router.route('/').get()
+router.route('/').get(controller.renderProducts)
 router.route('/create').get(admin, controller.renderCreate).post(admin, upload.array('images'), controller.create)
+router.route('/dashboard').get(admin, controller.renderDashboard)
+router.route('/:id/delete').get(admin, controller.renderDelete).delete(admin, controller.delete)
+router.route('/:id/edit').get(admin, controller.renderEdit).put(admin, upload.array('images'), controller.update)
 router.route('/:id').get(controller.renderDetail)
-router.route('/edit/:id').get(admin, controller.renderEdit).put(admin, upload.array('images'), controller.update)
-router.route('/delete/:id').get(admin, controller.renderDelete).delete(admin, controller.delete)
 
 module.exports = router

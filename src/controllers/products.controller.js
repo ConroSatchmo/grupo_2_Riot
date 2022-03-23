@@ -1,35 +1,52 @@
 const asyncHandler = require('express-async-handler')
 const DB = require('../database/models')
+const Sequelize = require('sequelize')
 const fs = require('fs')
+const path = require('path')
 
 module.exports = {
     renderProducts: asyncHandler(async (req, res) => {
+        // random products
         const products = await DB.Products.findAll({
             include: [
                 { association: "images" },
             ]
         })
-        res.render('products', { products })
+        res.render('products/index', { products })
     }),
     renderDetail: asyncHandler(async (req, res) => {
         const { id } = req.params
         const product = await DB.Products.findByPk(id, {
             include: [
                 { association: "images" },
+                { association: "colors" }
             ]
         })
-        res.render('products/detail', { product })
+        const colors = await DB.Colors.findAll()
+        res.render('products/detail', { product, colors })
     }),
-    renderCreate: (req, res) => {
-        res.render('products/create')
-    },
+    renderDashboard: asyncHandler(async (req, res) => {
+        const products = await DB.Products.findAll({
+            include: [
+                { association: "images" },
+                { association: "colors" },
+                { association: "brands" }
+            ]
+        })
+        res.render('products/dashboard', { products })
+    }),
+    renderCreate: asyncHandler(async (req, res) => {
+        const brands = await DB.Brands.findAll()
+        const colors = await DB.Colors.findAll()
+        res.render('products/create', { brands, colors })
+    }),
     create: asyncHandler(async (req, res) => {
         const product = {
-            name: req.body.nombreDeProducto,
-            description: req.body.descripcion,
+            name: req.body.name,
+            description: req.body.description,
             color_id: req.body.color,
-            brand_id: req.body.marca,
-            price: Number(req.body.precio),
+            brand_id: req.body.brand,
+            price: Number(req.body.price),
         }
         let images = req.files
         const newProduct = await DB.Products.create(product)
@@ -37,13 +54,18 @@ module.exports = {
 
         await DB.Images.bulkCreate(images)
 
-        res.redirect('/products')
+        res.redirect('/products/dashboard')
     }),
     renderEdit: asyncHandler(async (req, res) => {
         const { id } = req.params
-        const product = await DB.Products.findByPk(id)
+        const product = await DB.Products.findByPk(id, {
+            include: [
+                { association: "images" },
+            ]
+        })
         const colors = await DB.Colors.findAll()
-        res.render('products/edit', { product, colors })
+        const brands = await DB.Brands.findAll()
+        res.render('products/edit', { product, colors, brands })
     }),
     update: asyncHandler(async (req, res) => {
         const { id } = req.params
@@ -58,10 +80,10 @@ module.exports = {
 
         if(images.length > 0){
             for(let i = 0; i < images.length; i++){
-                fs.unlinkSync(`./images/products/${product.images[i].file_name}`)
+                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${images[i].file_name}`))
                 await DB.Images.destroy({
                     where: {
-                        product_id: product.images[i].id
+                        product_id: product.id
                     }
                 })
             }
@@ -69,18 +91,18 @@ module.exports = {
         }
         
         await DB.Products.update({
-            name: req.body.nombreDeProducto,
-            description: req.body.descripcion,
+            name: req.body.name,
+            description: req.body.description,
             color_id: req.body.color,
-            brand_id: req.body.marca,
-            price: Number(req.body.precio),
+            brand_id: req.body.brand,
+            price: Number(req.body.price),
         }, {
             where: { id }
         })
 
         await DB.Images.bulkCreate(images)
 
-        res.redirect('/products')
+        res.redirect('/products/dashboard')
     }),
     renderDelete: asyncHandler(async (req, res) => {
         const { id } = req.params
@@ -99,10 +121,10 @@ module.exports = {
         let images = product.images
         if (images.length > 0) {
             for (let i = 0; i < images.length; i++) {
-                fs.unlinkSync(`./images/products/${images[i].file_name}`)
+                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${images[i].file_name}`))
                 await DB.Images.destroy({
                     where: {
-                        product_id: images[i].id
+                        product_id: product.id
                     }
                 })
             }
@@ -115,6 +137,6 @@ module.exports = {
             }
         })
 
-        res.redirect('/products')
+        res.redirect('/products/dashboard')
     })
 }

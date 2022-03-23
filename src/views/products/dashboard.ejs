@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head', { title: 'Dashboard' }) %>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="/products/create" class="btn btn-primary salmon-btn mb-5">Crear un producto</a>
+                    <table class="table border">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Precio</th>
+                                <th>Marca</th>
+                                <th>Color</th>
+                                <th>Imagenes</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach(product=> { %>
+                                <tr>
+                                    <td>
+                                        <%- product.name %>
+                                    </td>
+                                    <td>
+                                        <%- product.description %>
+                                    </td>
+                                    <td>
+                                        <%- product.price %>
+                                    </td>
+                                    <td>
+                                        <%- product.brands.name %>
+                                    </td>
+                                    <td>
+                                        <%- product.colors.name %>
+                                    </td>
+                                    <td>
+                                        <% product.images.forEach(image=> { %>
+                                            <img src="/images/products/<%= image.file_name %>" class="img-fluid"
+                                                alt="..." width="120">
+                                        <% }) %>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="/products/<%= product.id %>/edit" class="btn btn-primary salmon-btn">Editar</a>
+                                            <a href="/products/<%= product.id %>/delete" class="btn btn-danger">Eliminar</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

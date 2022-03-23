@@ -22,6 +22,6 @@ const upload = multer({ storage })
 
 router.route('/register').get(public, controller.renderRegister).post(public, upload.single('image'), controller.register)
 router.route('/login').get(public, controller.renderLogin).post(public, controller.login)
-router.route('/logout').post(controller.logout)
+router.route('/logout').get(controller.logout)
 
 module.exports = router

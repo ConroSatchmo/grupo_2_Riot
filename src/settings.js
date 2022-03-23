@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 const path = require('path')
 const routes = require('./routes/index.routes')
 const methodOverride = require('method-override')
+const remember = require('./middlewares/remember.middleware')
 
 const app = express()
 
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(logger('dev'))
 app.use(methodOverride('_method'))
+app.use(remember)
 
 // static files
 app.use(express.static(path.join(__dirname, '../public')))

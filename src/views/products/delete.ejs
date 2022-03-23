@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-sm-10 col-md-6 col-lg-4">
+                <form action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
+                    <h1 class=" mb-5">¿Estas seguro que deseas eliminar el producto <%= product.name %>?</h1>
+                    <div class="btn-group w-100">
+                        <a href="/products/dashboard" class="btn btn-dark">Cancelar</a>
+                        <button type="submit" class="btn btn-danger salmon-btn">Aceptar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="text-center mt-5">Volver al dashboard <a href="/products/dashboard">aqui</a></p>
+    </div>
+    
+    <%- include('../partials/footer') %>
+</body>
+</html>

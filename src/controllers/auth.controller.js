@@ -18,7 +18,7 @@ module.exports = {
             user_name,
             password: await bcrypt.hash(password, 10),
             image,
-            category_id: 1
+            category_id: 3
         }
 
         const newUser = await DB.Users.create(user)
@@ -39,9 +39,10 @@ module.exports = {
         if(user){
             if(bcrypt.compareSync(password, user.password)){
                 req.session.user = user.email
-
+                
+                console.log(req.body.remember)
                 if(req.body.remember != undefined){
-                    res.cookie('user', user, { maxAge: 1000 * 60 })
+                    res.cookie('user', user.email, { maxAge: 1000 * 60 * 5 })
                 }
 
                 res.redirect('/')

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head', { title: 'Products' }) %>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <div class="container">
+        <div class="row">
+            <% products.forEach(product => { %>
+                <div class="col-md-3">
+                    <a href="/products/<%- product.id %>" class="text-decoration-none">
+                    <div class="card mb-4 shadow-sm">
+                        <% product.images.forEach(image=> { %>
+                        <% if(image.file_name.includes('000A')) { %>
+                            <img src="/images/products/<%= image.file_name %>" class="card-img" alt="...">
+                        <% } %>
+                        <% }) %>
+                        <div class="card-body">
+                            <p class="card-text text-center text-dark"><%- product.name %></p>
+                            <p class="text-muted text-center">$<%- product.price %></p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
