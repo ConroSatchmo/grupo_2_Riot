@@ -12,6 +12,19 @@ module.exports = {
                 { association: "images" },
             ]
         })
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('products/index', { products, user })
+        }
+
+
         res.render('products/index', { products })
     }),
     renderDetail: asyncHandler(async (req, res) => {
@@ -23,6 +36,18 @@ module.exports = {
             ]
         })
         const colors = await DB.Colors.findAll()
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('products/detail', { product, user, colors })
+        }
+
         res.render('products/detail', { product, colors })
     }),
     renderDashboard: asyncHandler(async (req, res) => {
@@ -33,11 +58,35 @@ module.exports = {
                 { association: "brands" }
             ]
         })
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('products/dashboard', { products, user })
+        }
+
         res.render('products/dashboard', { products })
     }),
     renderCreate: asyncHandler(async (req, res) => {
         const brands = await DB.Brands.findAll()
         const colors = await DB.Colors.findAll()
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('products/create', { brands, colors, user })
+        }
+
         res.render('products/create', { brands, colors })
     }),
     create: asyncHandler(async (req, res) => {
@@ -65,6 +114,18 @@ module.exports = {
         })
         const colors = await DB.Colors.findAll()
         const brands = await DB.Brands.findAll()
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('products/edit', { product, brands, colors, user })
+        }
+
         res.render('products/edit', { product, colors, brands })
     }),
     update: asyncHandler(async (req, res) => {
@@ -107,6 +168,18 @@ module.exports = {
     renderDelete: asyncHandler(async (req, res) => {
         const { id } = req.params
         const product = await DB.Products.findByPk(id)
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('products/delete', { product, user })
+        }
+
         res.render('products/delete', { product })
     }),
     delete: asyncHandler(async (req, res) => {

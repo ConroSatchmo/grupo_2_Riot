@@ -16,7 +16,8 @@ module.exports = asyncHandler(async (req, res, next) => {
 
     if(user.categories.name == "Administrador"){
         next()
+    }else{
+        return res.redirect('/')
     }
 
-    res.redirect('/')
 })
