@@ -17,7 +17,8 @@ insert into users (id, first_name, last_name, email, user_name, password, image,
 values  (default, "Cordelie", "Izakoff", "cizakoff0@purevolume.com", "cizakoff0", "34qs7YiGFQ", "Administrador", "https://robohash.org/quiaveniamest.png?size=50x50&set=set1", default);
 
 insert into user_product (id, user_id, product_id)
-values(default, default, default);
+values(default, default, default); 
+
 
 
 
