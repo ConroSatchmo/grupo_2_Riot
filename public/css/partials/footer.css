@@ -1,0 +1,9 @@
+.footer {
+    margin-top: auto;
+}
+
+body {
+    position: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

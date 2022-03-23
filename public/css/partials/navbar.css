@@ -1,0 +1,42 @@
+.salmon:hover a {
+    color: #f3a683!important;
+}
+
+.salmon a {
+    color: black!important;
+    font-weight: 600 !important;
+}
+
+.cl-salmon {
+    color: #f3a683!important;
+}
+
+.nav-link {
+    transition-duration: 200ms!important;
+}
+
+.salmon-btn {
+    background-color: #f3a683!important;
+    border-color: #f3a683!important;
+    transition-duration: 300ms!important;
+
+}
+
+.salmon-btn:hover {
+    background-color: #c08469!important;
+    border-color: #c08469!important;
+}
+
+body {
+    background-color: #f3a68307!important;
+}
+
+.scale {
+    transition-duration: 300ms!important;
+}
+
+.scale:hover {
+    transform: scale(1.1);
+    border: #f3a683 solid 1px!important;
+    border-radius: 5px;
+}

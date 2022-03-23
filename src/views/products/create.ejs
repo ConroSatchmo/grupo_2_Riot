@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-sm-10 col-md-6 col-lg-4">
+                <h1 class=" mb-5">Creá un nuevo producto</h1>
+                <form action="/products/create" method="POST" enctype="multipart/form-data">
+                    <div class="form-group mb-3">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa el nombre">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="description">Descripcion</label>
+                        <textarea name="description" id="description" rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="price">Precio</label>
+                        <input type="number" class="form-control" id="price" name="price" placeholder="Ingresa el precio" min="1" value="1">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="color">Color</label>
+                        <select name="color" id="color" class="form-select">
+                            <% colors.forEach(color=> { %>
+                                <option value="<%= color.id %>"><%= color.name %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password">Marca</label>
+                        <select name="brand" id="color" class="form-select">
+                            <% brands.forEach(brand=> { %>
+                                <option value="<%= brand.id %>"><%= brand.name %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="image">Imagenes</label>
+                        <input type="file" class="form-control" id="image" name="image" multiple>
+                    </div>
+                    <div class="d-grid gap-2 mt-5">
+                        <button type="submit" class="btn btn-primary salmon-btn">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="text-center mt-5">Volver al dashboard <a href="/products/dashboard">aqui</a></p>
+    </div>
+    
+    <%- include('../partials/footer') %>
+</body>
+</html>

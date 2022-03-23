@@ -1,61 +1,42 @@
-const express = require("express");
-const app = express();
-const path = require("path");
-const methodOverride = require("method-override");
-const logger = require("morgan");
-const session = require("express-session");
-const cookieParser = require("cookie-parser");
-const recordame = require("./middlewares/recordameMiddleware");
-const auth = require("./middlewares/authMiddleware");
+const express = require('express')
+const logger = require('morgan')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
+const path = require('path')
+const routes = require('./routes/index.routes')
+const methodOverride = require('method-override')
+const remember = require('./middlewares/remember.middleware')
 
-// Setting
-app.set("port", process.env.PORT || 3000);
-app.set("views", path.resolve(__dirname, "views"));
-app.set("view engine", "ejs");
+const app = express()
 
-// Middleware
-app.use(session({ secret: "secret", resave: false, saveUninitialized: true,}));
-app.use(express.json());
-app.use(cookieParser());
-app.use(auth);
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method"));
-app.use(logger("dev"));
-app.use(recordame);
+// settings
+app.set('port', process.env.PORT || 3000)
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
-// Static
-const publicPath = path.resolve(__dirname, "./public");
-app.use(express.static(publicPath));
+// middlewares
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true
+}))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(logger('dev'))
+app.use(methodOverride('_method'))
+app.use(remember)
 
-// Routes
-const homeRouter = require("./routes/home");
-app.use("/", homeRouter);
+// static files
+app.use(express.static(path.join(__dirname, '../public')))
 
-const userRouter = require("./routes/users");
-app.use("/users", userRouter);
+// routes
+routes(app)
 
-const productDetailRouter = require("./routes/products");
-app.use("/products", productDetailRouter);
+// 404
+app.use((req, res, next) => {
+    res.status(404).render('errors/404')
+})
 
-const productCartRouter = require("./routes/productCart");
-app.use("/productCart", productCartRouter);
 
-// const createProductRouter = require("./routes/createProduct");
-// app.use("/createProduct", createProductRouter);
-
-module.exports = app;
-
-// app.get("/register", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "./views/register.html"));
-// });
-// app.get("/login", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "./views/login.html"));
-// });
-
-// app.get("/productDetail", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "./views/productDetail.html"));
-// });
-
-// app.get("/productCart", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "./views/productCart.html"));
-// });
+module.exports = app

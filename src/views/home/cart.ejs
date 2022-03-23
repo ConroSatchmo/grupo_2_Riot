@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head', { title: 'Carrito' }) %>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+
+        <div class="container py-5 ">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <table class="table border text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach(product => { %>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-row justify-content-start align-items-center">
+                                            <% product.images.forEach(image=> { %>
+                                            <% if(image.file_name.includes('000A')) { %>
+                                                <img src="/images/products/<%= image.file_name %>" class="img-fluid" alt="..." width="120">
+                                            <% } %>
+                                            <% }) %>
+                                            <p class="card-text text-center text-dark"><%- product.name %></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="col-4">
+                                                <div class="input-group mb-3">
+                                                    <input type="number" class="form-control" min="1" value="1">
+                                                    <a href="#" class="btn btn-primary salmon-btn">Borrar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-center text-dark align-middle">$<%- product.price %></p>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-center my-5">
+                <div class="col-5">
+                    <table class="table border">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="text-dark">Subtotal</p>
+                                </td>
+                                <td>
+                                    <p class="text-dark">$<%= products.map(product => product.price).reduce((i, price) => i + price ) %></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex flex-row align-items-baseline">
+                                        <p class="text-dark">Envio</p>
+                                        <div class="col-6 ms-4">
+                                            <select class="form-select">
+                                                <option>Correo Argentino</option>
+                                                <option>Oca Express</option>
+                                                <option>Moto</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="text-dark">$3.000</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="text-dark fs-4">Total</p>
+                                </td>
+                                <td>
+                                    <p class="text-dark fs-4">$<%= (products.map(product => product.price).reduce((i, price) => i + price ) + 3000) %></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-end mt-4 w-100">
+                        <a href="/" class="btn btn-primary salmon-btn">Finalizar compra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

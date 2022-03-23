@@ -1,6 +1,9 @@
-const app = require("./settings");
+const app = require('./settings')
 
-app.listen(app.get("port"), () => {
-  console.log("Server is running on port", app.get("port"));
-});
+async function start()
+{
+    await app.listen(app.get('port'))
+    console.log('Server on port', `http://localhost:${app.get('port')}`)
+}
 
+start()
