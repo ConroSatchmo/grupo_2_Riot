@@ -61,5 +61,18 @@ module.exports = {
         req.session.destroy()
         res.clearCookie('user')
         res.redirect('/')
-    }
+    },
+    renderProfile: asyncHandler(async (req, res) => {
+        const userEmail = req.session.user ? req.session.user : null
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('auth/profile', { user })
+        }else{
+            res.redirect('/auth/login')
+        }
+    }),
 }

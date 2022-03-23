@@ -15,10 +15,15 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-sm-3 d-flex justify-content-center mb-3">
-                <!-- <a href="/checkout" class="btn">Carrito <i class="fa-solid fa-cart-shopping"></i></a> -->
-                <a href="/auth/login" class="btn btn-dark me-2">Ingresar <i class="fa-solid fa-right-to-bracket"></i></a>
-                <a href="/auth/register" class="btn btn-primary ms-2 salmon-btn">Registrarse <i class="fa-solid fa-right-from-bracket"></i></a>
+            <div class="col-12 col-sm-3 d-flex justify-content-center mb-3 align-items-center">
+                <% if(locals.user){ %>
+                    <a href="/checkout" class="text-dark fs-2 mx-2"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="/auth/profile" class="text-dark fs-1 mx-2"><i class="fa-solid fa-circle-user"></i></a>
+                    <a href="/auth/logout" class="text-dark fs-2 mx-2"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <% }else{ %>
+                    <a href="/auth/login" class="btn btn-dark me-2">Ingresar <i class="fa-solid fa-right-to-bracket"></i></a>
+                    <a href="/auth/register" class="btn btn-primary ms-2 salmon-btn">Registrarse <i class="fa-solid fa-right-from-bracket"></i></a>
+                <% } %>
             </div>
         </div>
     </div>

@@ -13,6 +13,18 @@ module.exports = {
             ],
             limit: 8
         })
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('home/index', { products, user })
+        }
+
         res.render('home/index', {
             products
         })
@@ -27,6 +39,19 @@ module.exports = {
             ],
             limit: 2
         })
+
+        const userEmail = req.session.user ? req.session.user : null
+
+        if(userEmail != null){
+            const user = await DB.Users.findOne({
+                where: {
+                    email: userEmail
+                }
+            })
+            res.render('home/cart', { products, user })
+        }
+
+
         res.render('home/cart', {
             products
         })

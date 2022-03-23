@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head', { title: user.user_name }) %>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <div class="container py-5 ">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-5 border-end py-5 d-flex justify-content-end">
+                <img src="/images/users/<%= user.image %>" alt="" class="img-fluid me-5">
+            </div>
+            <div class="col-5 ps-5">
+                <h2 class="mb-5"><%= user.user_name %></h3>
+                <p>Nombres: <%= user.first_name %></p>
+                <p>Apellidos: <%= user.last_name %></p>
+                <p>Email: <%= user.email %></p>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
