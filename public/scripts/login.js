@@ -1,18 +1,25 @@
 window.addEventListener("load", function () {
   let formulario = document.querySelector("form.formulario");
-  console.log(formulario);
 
   formulario.addEventListener("submit", function (event) {
-    event.preventDefault();
     const email = document.querySelector("input#email").value;
     const password = document.querySelector("input#password").value;
 
+    const errores = [];
+
     if (email === "") {
-      alert("Debes completar el email");
+      errores.push("Debes completar el email");
+    }
+    if (password === "") {
+      errores.push("Debes completar la contraseña");
     }
 
-    if (password === "") {
-      alert("Debes completar la contraseña");
+    if (errores.length > 0) {
+      event.preventDefault();
+      let ulerrores = document.querySelector("div.errores ul");
+      for (let i = 0; i < errores.length; i++) {
+        ulerrores.innerHTML += "<li>" + errores[i] + "</li>";
+      }
     }
   });
 });
