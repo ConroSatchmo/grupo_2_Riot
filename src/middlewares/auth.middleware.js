@@ -3,7 +3,7 @@ const DB = require('../database/models')
 
 module.exports = asyncHandler(async (req, res, next) => {
     if(!req.session.user){
-        return res.redirect('/auth/login')
+        res.redirect('/auth/login')
     }
 
     next()

@@ -13,15 +13,15 @@ module.exports = {
             ]
         })
 
-        const userEmail = req.session.user ? req.session.user : null
+        const userEmail = req.cookies.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('products/index', { products, user })
+            return res.render('products/index', { products, user })
         }
 
 
@@ -39,13 +39,13 @@ module.exports = {
 
         const userEmail = req.session.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('products/detail', { product, user, colors })
+            return res.render('products/detail', { product, user, colors })
         }
 
         res.render('products/detail', { product, colors })
@@ -61,13 +61,13 @@ module.exports = {
 
         const userEmail = req.session.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('products/dashboard', { products, user })
+            return res.render('products/dashboard', { products, user })
         }
 
         res.render('products/dashboard', { products })
@@ -78,13 +78,13 @@ module.exports = {
 
         const userEmail = req.session.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('products/create', { brands, colors, user })
+            return res.render('products/create', { brands, colors, user })
         }
 
         res.render('products/create', { brands, colors })
@@ -117,13 +117,13 @@ module.exports = {
 
         const userEmail = req.session.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('products/edit', { product, brands, colors, user })
+            return res.render('products/edit', { product, brands, colors, user })
         }
 
         res.render('products/edit', { product, colors, brands })
@@ -171,13 +171,13 @@ module.exports = {
 
         const userEmail = req.session.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('products/delete', { product, user })
+            return res.render('products/delete', { product, user })
         }
 
         res.render('products/delete', { product })

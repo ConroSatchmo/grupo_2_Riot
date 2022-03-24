@@ -16,13 +16,13 @@ module.exports = {
 
         const userEmail = req.session.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('home/index', { products, user })
+            return res.render('home/index', { products, user })
         }
 
         res.render('home/index', {
@@ -42,13 +42,13 @@ module.exports = {
 
         const userEmail = req.session.user ? req.session.user : null
 
-        if(userEmail != null){
+        if(userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('home/cart', { products, user })
+            return res.render('home/cart', { products, user })
         }
 
 

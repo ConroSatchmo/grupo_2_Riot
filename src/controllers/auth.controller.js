@@ -40,8 +40,8 @@ module.exports = {
             if(bcrypt.compareSync(password, user.password)){
                 req.session.user = user.email
                 
-                console.log(req.body.remember)
-                if(req.body.remember != undefined){
+                // console.log(req.body.remember)
+                if(req.body.remember){
                     res.cookie('user', user.email, { maxAge: 1000 * 60 * 5 })
                 }
 
@@ -64,13 +64,13 @@ module.exports = {
     },
     renderProfile: asyncHandler(async (req, res) => {
         const userEmail = req.session.user ? req.session.user : null
-        if(userEmail != null){
+        if(!userEmail){
             const user = await DB.Users.findOne({
                 where: {
                     email: userEmail
                 }
             })
-            res.render('auth/profile', { user })
+            return res.render('auth/profile', { user })
         }else{
             res.redirect('/auth/login')
         }
