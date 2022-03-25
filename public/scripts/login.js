@@ -1,25 +1,34 @@
 window.addEventListener("load", function () {
+  let btnSubmit = document.querySelector("#btnSubmit");
+  let inputEmail = document.querySelector("input#email");
+  let inputPassword = document.querySelector("input#password");
+  let erEmail = document.querySelector(".erEmail");
+  let erPassword = document.querySelector(".erPassword");
   let formulario = document.querySelector("form.formulario");
+  let validEmailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-  formulario.addEventListener("submit", function (event) {
-    const email = document.querySelector("input#email").value;
-    const password = document.querySelector("input#password").value;
+  btnSubmit.addEventListener("click", function (event) {
+    event.preventDefault();
+    let errores = {};
 
-    const errores = [];
-
-    if (email === "") {
-      errores.push("Debes completar el email");
-    }
-    if (password === "") {
-      errores.push("Debes completar la contraseña");
+    if (inputEmail.value.length < 1) {
+      errores.email = "Debes completar el email";
     }
 
-    if (errores.length > 0) {
-      event.preventDefault();
-      let ulerrores = document.querySelector("div.errores ul");
-      for (let i = 0; i < errores.length; i++) {
-        ulerrores.innerHTML += "<li>" + errores[i] + "</li>";
-      }
+    if (inputEmail.value.match(validEmailRegex)) {
+      errores.email = "Debes ingresar un email válido";
+    }
+
+    if (inputPassword.value.length < 1) {
+      errores.pass = "Debes completar la contraseña";
+    }
+
+    if (Object.keys(errores).length >= 1) {
+      erEmail.innerHTML = errores.email ? errores.email : "";
+      // erEmail.innerHTML += errores.type ? errores.type : "";
+      erPassword.innerHTML = errores.pass ? errores.pass : "";
+    } else {
+      formulario.submit();
     }
   });
 });

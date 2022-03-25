@@ -2,9 +2,9 @@ window.addEventListener("load", function () {
   let formulario = document.querySelector("form.formulario");
 
   formulario.addEventListener("submit", function (event) {
-    const name = document.querySelector("input#name").value;
-    const description = document.querySelector("input#description").value;
-    const imageType = document.querySelector("input#image").type;
+    const name = document.querySelector("#name").value;
+    const description = document.querySelector("#description").value;
+    const imageType = document.querySelector("#image").type;
 
     const errores = [];
 
