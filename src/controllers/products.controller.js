@@ -13,7 +13,7 @@ module.exports = {
             ]
         })
 
-        const userEmail = req.cookies.user ? req.session.user : null
+        const userEmail = req.session.user ? req.session.user : null
 
         if(userEmail){
             const user = await DB.Users.findOne({

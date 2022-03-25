@@ -9,9 +9,9 @@ module.exports = [
         .notEmpty()
         .withMessage('Ingrese su email')
         .bail()
-        .isEmail()
-        .withMessage('Ingrese un email valido')
-        .bail()
+        // .isEmail()
+        // .withMessage('Ingrese un email valido')
+        // .bail()
         .custom(asyncHandler(async (value, { req }) => {
             const user = await DB.Users.findOne({
                 where: {
@@ -26,12 +26,12 @@ module.exports = [
         .notEmpty()
         .withMessage('Ingrese su contraseña')
         .bail()
-        .isLength({ min: 8 })
-        .withMessage('La contraseña debe tener al menos 8 caracteres')
-        .bail()
-        .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/, "i")
-        .withMessage('La contraseña debe tener al menos una mayuscula, una minuscula, un caracter especial y un numero')
-        .bail()
+        // .isLength({ min: 8 })
+        // .withMessage('La contraseña debe tener al menos 8 caracteres')
+        // .bail()
+        // .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/, "i")
+        // .withMessage('La contraseña debe tener al menos una mayuscula, una minuscula, un caracter especial y un numero')
+        // .bail()
         .custom(asyncHandler(async (value, { req }) => {
             const user = await DB.Users.findOne({
                 where: {
