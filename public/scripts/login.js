@@ -15,9 +15,9 @@ window.addEventListener("load", function () {
       errores.email = "Debes completar el email";
     }
 
-    if (inputEmail.value.match(validEmailRegex)) {
-      errores.email = "Debes ingresar un email válido";
-    }
+    // if (inputEmail.value.match(validEmailRegex)) {
+    //   errores.email = "Debes ingresar un email válido";
+    // }
 
     if (inputPassword.value.length < 1) {
       errores.pass = "Debes completar la contraseña";
