@@ -25,7 +25,6 @@ window.addEventListener("load", function () {
 
     if (Object.keys(errores).length >= 1) {
       erEmail.innerHTML = errores.email ? errores.email : "";
-      // erEmail.innerHTML += errores.type ? errores.type : "";
       erPassword.innerHTML = errores.pass ? errores.pass : "";
     } else {
       formulario.submit();

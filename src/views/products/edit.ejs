@@ -15,10 +15,24 @@
                         <label for="name">Nombre</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa el nombre" value="<%= product.name %>">
                     </div>
+                    <div class="col-8 col-lg-10">
+                        <small class="text-danger erName"></small>
+                      </div>
+                      <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+                      errores.length; i++) { %> <% if(errores[i].param == "name") { %>
+                      <small class="text-danger"> <%= errores[i].msg %> </small>
+                      <% } %> <% } %> <% } %>
                     <div class="form-group mb-3">
                         <label for="description">Descripcion</label>
                         <textarea name="description" id="description" rows="3" class="form-control"><%= product.description %></textarea>
                     </div>
+                    <div class="col-8 col-lg-10">
+              <small class="text-danger erDescription"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "description") { %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
                     <div class="form-group mb-3">
                         <label for="price">Precio</label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="Ingresa el precio" min="1" value="<%= product.price %>">
@@ -46,11 +60,15 @@
                             <img src="/images/products/<%= image.file_name %>" alt="..." class="img-thumbnail mt-3" width="100">
                         <% }) %>
                     </div>
-                    <div class="errores">
-                        <ul></ul>
-                      </div>
+                    <div class="col-8 col-lg-10">
+              <small class="text-danger erImage"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "image") { %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
                     <div class="d-grid gap-2 mt-5">
-                        <button type="submit" class="btn btn-primary salmon-btn">Editar</button>
+                        <button id="btnSubmit" type="submit" class="btn btn-primary salmon-btn">Editar</button>
                     </div>
                 </form>
             </div>

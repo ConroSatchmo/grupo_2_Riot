@@ -26,6 +26,14 @@
                 placeholder="Ingresa tu nombre"
               />
             </div>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erFirstName"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "first_name") {
+            %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="form-group mb-3">
               <label for="last_name">Apellidos</label>
               <input
@@ -36,6 +44,14 @@
                 placeholder="Ingresa tus apellidos"
               />
             </div>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erLastName"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "last_name") {
+            %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="form-group mb-3">
               <label for="email">Email</label>
               <input
@@ -46,6 +62,13 @@
                 placeholder="Ingresa tu email"
               />
             </div>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erEmail"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "email") { %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="form-group mb-3">
               <label for="user_name">Usuario</label>
               <input
@@ -56,6 +79,14 @@
                 placeholder="Ingresa tu usuario"
               />
             </div>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erUser"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "user_name") {
+            %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="form-group mb-3">
               <label for="password">Contraseña</label>
               <input
@@ -66,15 +97,30 @@
                 placeholder="Ingresa tu contraseña"
               />
             </div>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erPassword"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "password") { %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="form-group mb-4">
               <label for="image">Avatar</label>
               <input type="file" class="form-control" id="image" name="image" />
             </div>
-            <div class="errores">
-              <ul></ul>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erImage"></small>
             </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "image") { %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="d-grid gap-2 mt-5">
-              <button type="submit" class="btn btn-primary salmon-btn">
+              <button
+                type="submit"
+                id="btnSubmit"
+                class="btn btn-primary salmon-btn"
+              >
                 Enviar
               </button>
             </div>

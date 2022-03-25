@@ -26,6 +26,13 @@
                 placeholder="Ingresa el nombre"
               />
             </div>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erName"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "name") { %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="form-group mb-3">
               <label for="description">Descripcion</label>
               <textarea
@@ -35,6 +42,14 @@
                 class="form-control"
               ></textarea>
             </div>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erDescription"></small>
+            </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "description") {
+            %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="form-group mb-3">
               <label for="price">Precio</label>
               <input
@@ -73,11 +88,19 @@
                 multiple
               />
             </div>
-            <div class="errores">
-              <ul></ul>
+            <div class="col-8 col-lg-10">
+              <small class="text-danger erImage"></small>
             </div>
+            <% if(typeof errores != "undefined") { %> <% for(let i = 0; i <
+            errores.length; i++) { %> <% if(errores[i].param == "image") { %>
+            <small class="text-danger"> <%= errores[i].msg %> </small>
+            <% } %> <% } %> <% } %>
             <div class="d-grid gap-2 mt-5">
-              <button type="submit" class="btn btn-primary salmon-btn">
+              <button
+                id="btnSubmit"
+                type="submit"
+                class="btn btn-primary salmon-btn"
+              >
                 Crear
               </button>
             </div>

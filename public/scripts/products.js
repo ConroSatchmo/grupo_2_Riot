@@ -1,31 +1,58 @@
 window.addEventListener("load", function () {
+  let btnSubmit = document.querySelector("#btnSubmit");
+  let inputName = document.querySelector("input#name");
+  let inputDescription = document.querySelector("input#description");
+  let typeImage = document.querySelector("input#image").files[0].type;
+  let erName = document.querySelector(".erName");
+  let erDescription = document.querySelector(".erDescription");
+  let erImage = document.querySelector(".erImage");
   let formulario = document.querySelector("form.formulario");
+  let allowedExtension = [
+    "image/jpeg",
+    "image/jpg",
+    "image/png",
+    "image/gif",
+    "image/bmp",
+  ];
 
-  formulario.addEventListener("submit", function (event) {
-    const name = document.querySelector("#name").value;
-    const description = document.querySelector("#description").value;
-    const imageType = document.querySelector("#image").type;
+  btnSubmit.addEventListener("click", function (event) {
+    event.preventDefault();
 
-    const errores = [];
+    let errores = {};
 
-    if (name === "") {
-      errores.push("Debes completar el nombre del producto");
+    if (inputName.value.length < 1) {
+      errores.name = "Debes completar el nombre del producto";
     }
-    if (name.length < 5) {
-      errores.push("El nombre del producto debe tener al menos 5 caracteres");
+    if (inputName.value.length < 5) {
+      errores.name = "El nombre del producto debe tener al menos 5 caracteres";
     }
-    if (description.length < 20) {
-      errores.push("La descripción debe tener al menos 20 caracteres");
+    if (inputDescription.value.length < 20) {
+      errores.description = "La descripción debe tener al menos 20 caracteres";
     }
-    if (imageType === "file") {
-      errores.push("Debes subir una imagen válida");
+    if (
+      typeImage !== allowedExtension[0] &&
+      typeImage !== allowedExtension[1] &&
+      typeImage !== allowedExtension[2] &&
+      typeImage !== allowedExtension[3] &&
+      typeImage !== allowedExtension[4]
+    ) {
+      errores.image = "Debes subir una imagen válida";
     }
-    if (errores.length > 0) {
-      event.preventDefault();
-      let ulerrores = document.querySelector("div.errores ul");
-      for (let i = 0; i < errores.length; i++) {
-        ulerrores.innerHTML += "<li>" + errores[i] + "</li>";
-      }
+
+    if (inputEmail.value.match(validEmailRegex)) {
+      errores.email = "Debes ingresar un email válido";
+    }
+
+    if (inputPassword.value.length < 1) {
+      errores.pass = "Debes completar la contraseña";
+    }
+
+    if (Object.keys(errores).length >= 1) {
+      erName.innerHTML = errores.name ? errores.name : "";
+      erDescription.innerHTML = errores.description ? errores.description : "";
+      erImage.innerHTML = errores.image ? errores.image : "";
+    } else {
+      formulario.submit();
     }
   });
 });
