@@ -1,4 +1,3 @@
-const path = require("path")
 const { check } = require("express-validator")
 const asyncHandler = require('express-async-handler')
 const DB = require("../../database/models")

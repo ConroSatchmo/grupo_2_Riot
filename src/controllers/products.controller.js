@@ -3,6 +3,7 @@ const DB = require('../database/models')
 const Sequelize = require('sequelize')
 const fs = require('fs')
 const path = require('path')
+const { validationResult } = require('express-validator')
 
 module.exports = {
     renderProducts: asyncHandler(async (req, res) => {
@@ -90,6 +91,7 @@ module.exports = {
         res.render('products/create', { brands, colors })
     }),
     create: asyncHandler(async (req, res) => {
+        let errors = validationResult(req)
         const product = {
             name: req.body.name,
             description: req.body.description,
@@ -98,12 +100,31 @@ module.exports = {
             price: Number(req.body.price),
         }
         let images = req.files
-        const newProduct = await DB.Products.create(product)
-        images = images.map((image) => ({ file_name: image.filename, product_id: newProduct.id }))
 
-        await DB.Images.bulkCreate(images)
+        if(errors.isEmpty()){
+            const newProduct = await DB.Products.create(product)
+            images = images.map((image) => ({ file_name: image.filename, product_id: newProduct.id }))
+    
+            await DB.Images.bulkCreate(images)
+    
+            res.redirect('/products/dashboard')
+        }else{
+            const brands = await DB.Brands.findAll()
+            const colors = await DB.Colors.findAll()
+            const userEmail = req.session.user ? req.session.user : null
 
-        res.redirect('/products/dashboard')
+            if(userEmail){
+                const user = await DB.Users.findOne({
+                    where: {
+                        email: userEmail
+                    }
+                })
+                return res.render('products/create', { errors: errors.mapped(), brands, colors, user, old: req.body })
+            }
+
+            res.render('products/create', { errors: errors.mapped(), brands, colors, old: req.body })
+        }
+
     }),
     renderEdit: asyncHandler(async (req, res) => {
         const { id } = req.params
@@ -129,6 +150,7 @@ module.exports = {
         res.render('products/edit', { product, colors, brands })
     }),
     update: asyncHandler(async (req, res) => {
+        let errors = validationResult(req)
         const { id } = req.params
         const product = await DB.Products.findByPk(id,
             {
@@ -139,31 +161,51 @@ module.exports = {
         )
         let images = req.files
 
-        if(images.length > 0){
-            for(let i = 0; i < images.length; i++){
-                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${images[i].file_name}`))
-                await DB.Images.destroy({
+        if(errors.isEmpty()){
+            if(images.length > 0){
+                if(product.images.length > 0){
+                    for(let i = 0; i < images.length; i++){
+                        fs.unlinkSync(path.join(__dirname, `../../public/images/products/${product.images[i].file_name}`))
+                    }
+                    await DB.Images.destroy({
+                        where: {
+                            product_id: product.id
+                        }
+                    })
+                }
+                images = images.map((image) => ({ file_name: image.filename, product_id: id }))
+            }
+            
+            await DB.Products.update({
+                name: req.body.name,
+                description: req.body.description,
+                color_id: req.body.color,
+                brand_id: req.body.brand,
+                price: Number(req.body.price),
+            }, {
+                where: { id }
+            })
+    
+            await DB.Images.bulkCreate(images)
+    
+            res.redirect('/products/dashboard')
+        }else{
+            const colors = await DB.Colors.findAll()
+            const brands = await DB.Brands.findAll()
+            const userEmail = req.session.user ? req.session.user : null
+
+            if(userEmail){
+                const user = await DB.Users.findOne({
                     where: {
-                        product_id: product.id
+                        email: userEmail
                     }
                 })
+                return res.render('products/edit', { errors: errors.mapped(), product, colors, brands, user, old: req.body })
             }
-            images = images.map((image) => ({ file_name: image.filename, product_id: id }))
+
+            res.render('products/edit', { errors: errors.mapped(), product, colors, brands, old: req.body })
         }
-        
-        await DB.Products.update({
-            name: req.body.name,
-            description: req.body.description,
-            color_id: req.body.color,
-            brand_id: req.body.brand,
-            price: Number(req.body.price),
-        }, {
-            where: { id }
-        })
 
-        await DB.Images.bulkCreate(images)
-
-        res.redirect('/products/dashboard')
     }),
     renderDelete: asyncHandler(async (req, res) => {
         const { id } = req.params
@@ -195,12 +237,12 @@ module.exports = {
         if (images.length > 0) {
             for (let i = 0; i < images.length; i++) {
                 fs.unlinkSync(path.join(__dirname, `../../public/images/products/${images[i].file_name}`))
-                await DB.Images.destroy({
-                    where: {
-                        product_id: product.id
-                    }
-                })
             }
+            await DB.Images.destroy({
+                where: {
+                    product_id: product.id
+                }
+            })
             images = images.map((image) => ({ file_name: image.file_name, product_id: id }))
         }
 

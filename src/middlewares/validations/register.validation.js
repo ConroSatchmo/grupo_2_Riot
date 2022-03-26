@@ -49,14 +49,14 @@ module.exports = [
         .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/, "i")
         .withMessage('La contraseña debe tener al menos una mayuscula, una minuscula, un caracter especial y un numero'),
     check('image')
-        .custom((value, { req }) => {
-            if (req.file) {
-                return true;
-            }
-            return false;
-        })
-        .withMessage('Seleccione una imagen')
-        .bail()
+        // .custom((value, { req }) => {
+        //     if (req.file) {
+        //         return true;
+        //     }
+        //     return false;
+        // })
+        // .withMessage('Seleccione una imagen')
+        // .bail()
         .custom((value, { req }) => {
             if (req.file) {
                 const ext = path.extname(req.file.originalname).toLowerCase();
