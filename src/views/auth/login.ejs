@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <%- include('../partials/head') %>
   </head>
@@ -41,6 +42,46 @@
             </div>
             <div class="col-8 col-lg-10">
               <small class="text-danger erPassword"></small>
+=======
+<head>
+    <%- include('../partials/head', { title: 'Ingresar' }) %>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-sm-10 col-md-6 col-lg-4">
+                <h1 class=" mb-5">¡Bienvenido! Ingresá tu email y contraseña</h1>
+                <form action="/auth/login" method="POST">
+                    <div class="form-group mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email ? old.email : '' %>">
+                        <% if(locals.errors && errors.email){ %>
+                            <small class="form-text text-danger"><%= errors.email.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña">
+                        <% if(locals.errors && errors.password){ %>
+                            <small class="form-text text-danger"><%= errors.password.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-baseline mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"id="flexCheckDefault" name="remember">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Recuerdame
+                            </label>
+                        </div>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <div class="d-grid gap-2 mt-5">
+                        <button type="submit" class="btn btn-primary salmon-btn">Ingresar</button>
+                    </div>
+                </form>
+>>>>>>> origin/dev
             </div>
             <% if(typeof errores != 'undefined') { %> <% for(let i = 0; i <
             errores.length; i++) { %> <% if(errores[i].param == 'password') { %>

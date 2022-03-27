@@ -25,4 +25,8 @@ Colores: Background: Blanco, Fuente: Negra, Detalles: Naranja, Rojo.
 
 Link de Trello primer SPRINT: https://trello.com/b/vHMVpHMi/primer-sprint
 
+<<<<<<< HEAD
 Link de Trello segundo SPRINT: https://trello.com/b/2no4HCew/segundo-sprint
+=======
+Link de Trello segundo SPRINT: https://trello.com/b/2no4HCew/segundo-sprint
+>>>>>>> origin/dev

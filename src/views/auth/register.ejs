@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <%- include('../partials/head') %>
   </head>
@@ -25,6 +26,54 @@
                 name="first_name"
                 placeholder="Ingresa tu nombre"
               />
+=======
+<head>
+    <%- include('../partials/head', { title: 'Registrate' }) %>
+    <script src="/js/validations/register.js" defer></script>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-sm-10 col-md-6 col-lg-4">
+                <h1 class=" mb-5">Creá tu cuenta</h1>
+                <form action="/auth/register" method="POST" enctype="multipart/form-data" id="register-form">
+                    <div class="form-group mb-3">
+                        <label for="first_name">Nombre</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.first_name ? old.first_name : '' %>">
+                        <small class="form-text text-danger" id="V-firstname"><%= locals.errors && errors.first_name ? errors.first_name.msg : '' %></small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="last_name">Apellidos</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Ingresa tus apellidos" value="<%= locals.old && old.last_name ? old.last_name : '' %>">
+                        <small class="form-text text-danger" id="V-lastname"><%= locals.errors && errors.last_name ? errors.last_name.msg : '' %></small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email ? old.email : '' %>">
+                        <small class="form-text text-danger" id="V-email"><%= locals.errors && errors.email ? errors.email.msg : '' %></small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="user_name">Usuario</label>
+                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Ingresa tu usuario" value="<%= locals.old && old.user_name ? old.user_name : '' %>">
+                        <small class="form-text text-danger" id="V-username"><%= locals.errors && errors.user_name ? errors.user_name.msg : '' %></small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" value="<%= locals.old && old.password ? old.password : '' %>">
+                        <small class="form-text text-danger" id="V-password"><%= locals.errors && errors.password ? errors.password.msg : '' %></small>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="image">Avatar</label>
+                        <input type="file" class="form-control" id="image" name="image">
+                        <small class="form-text text-danger" id="V-image"><%= locals.errors && errors.image ? errors.image.msg : '' %></small>
+                    </div>
+                    <div class="d-grid gap-2 mt-5">
+                        <button type="submit" class="btn btn-primary salmon-btn">Enviar</button>
+                    </div>
+                </form>
+>>>>>>> origin/dev
             </div>
             <div class="col-8 col-lg-10">
               <small class="text-danger erFirstName"></small>

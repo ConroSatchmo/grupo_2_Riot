@@ -5,6 +5,8 @@ const path = require('path')
 const multer = require('multer')
 const public = require('../middlewares/public.middleware')
 const user = require('../middlewares/auth.middleware')
+const registerV = require('../middlewares/validations/register.validation')
+const loginV = require('../middlewares/validations/login.validation')
 
 const storage = multer.diskStorage(
     {
@@ -21,9 +23,9 @@ const storage = multer.diskStorage(
 )
 const upload = multer({ storage })
 
-router.route('/register').get(public, controller.renderRegister).post(public, upload.single('image'), controller.register)
+router.route('/register').get(public, controller.renderRegister).post(public, upload.single('image'), registerV, controller.register)
 router.route('/profile').get(user, controller.renderProfile)
-router.route('/login').get(public, controller.renderLogin).post(public, controller.login)
+router.route('/login').get(public, controller.renderLogin).post(public, loginV, controller.login)
 router.route('/logout').get(controller.logout)
 
 module.exports = router
