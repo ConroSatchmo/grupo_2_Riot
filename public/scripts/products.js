@@ -14,13 +14,13 @@ window.addEventListener("load", function () {
     "image/gif",
     "image/bmp",
   ];
-
   btnSubmit.addEventListener("click", function (event) {
     event.preventDefault();
 
     let errores = {};
 
     if (inputName.value.length < 1) {
+      alert("hola");
       errores.name = "Debes completar el nombre del producto";
     }
     if (inputName.value.length < 5) {
@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
       errores.image = "Debes subir una imagen válida";
     }
 
-    if (inputEmail.value.match(validEmailRegex)) {
+    if (!inputEmail.value.match(validEmailRegex)) {
       errores.email = "Debes ingresar un email válido";
     }
 
