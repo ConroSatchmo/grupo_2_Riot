@@ -20,7 +20,6 @@ window.addEventListener("load", function () {
     let errores = {};
 
     if (inputName.value.length < 1) {
-      alert("hola");
       errores.name = "Debes completar el nombre del producto";
     }
     if (inputName.value.length < 5) {
