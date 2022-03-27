@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
       errores.email = "Debes completar el email";
     }
 
-    if (inputEmail.value.match(validEmailRegex)) {
+    if (!inputEmail.value.match(validEmailRegex)) {
       errores.email = "Debes ingresar un email válido";
     }
     if (inputUserName.value.length < 1) {
@@ -59,11 +59,12 @@ window.addEventListener("load", function () {
       errores.pass = "La contraseña debe tener al menos 8 caracteres";
     }
     if (
-      inputPassword.value.matches(
+      !inputPassword.value.matches(
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
         "i"
       )
     ) {
+      alert("hola");
       errores.pass =
         "La contraseña debe tener al menos una mayúscula, una minúscula, un caracter especial y un número";
     }
