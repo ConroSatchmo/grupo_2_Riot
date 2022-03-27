@@ -2,6 +2,7 @@ const path = require("path")
 const { check } = require("express-validator")
 const asyncHandler = require('express-async-handler')
 const DB = require("../../database/models")
+const fs = require("fs")
 
 module.exports = [
     check('first_name')
@@ -49,22 +50,17 @@ module.exports = [
         .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/, "i")
         .withMessage('La contraseña debe tener al menos una mayuscula, una minuscula, un caracter especial y un numero'),
     check('image')
-        // .custom((value, { req }) => {
-        //     if (req.file) {
-        //         return true;
-        //     }
-        //     return false;
-        // })
-        // .withMessage('Seleccione una imagen')
-        // .bail()
         .custom((value, { req }) => {
-            if (req.file) {
-                const ext = path.extname(req.file.originalname).toLowerCase();
-                if (ext === ".png" || ext === ".jpg" || ext === ".jpeg") {
-                    return true;
+            const image = req.file
+            if(image){
+                if(image.mimetype !== "image/jpeg" && image.mimetype !== "image/png"){
+                    fs.unlinkSync(path.join(__dirname, "../../../public/images/users/", image.filename))
+                    return false
                 }
+                return true
+            }else{
+                return true
             }
-            return false;
         })
         .withMessage('Solo se permiten imagenes con extensiones .png, .jpg o .jpeg'),
 ]
