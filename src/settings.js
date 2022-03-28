@@ -6,6 +6,7 @@ const path = require('path')
 const routes = require('./routes/index.routes')
 const methodOverride = require('method-override')
 const remember = require('./middlewares/remember.middleware')
+const cors = require('cors')
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 // middlewares
+app.use(cors())
 app.use(session({
     secret: 'secret',
     resave: false,
