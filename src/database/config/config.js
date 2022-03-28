@@ -1,10 +1,10 @@
 module.exports = {
   development: {
     username: "root",
-    password: "Okocha10",
+    password: "",
     database: "grupo_riot",
     host: "127.0.0.1",
-    dialect: "mysql",
+    dialect: "mariadb",
   },
   test: {
     username: "root",
