@@ -1,5 +1,5 @@
-const asyncHandler = require("express-async-handler")
-const DB = require("../database/models")
+const asyncHandler = require("express-async-handler");
+const DB = require("../database/models");
 
 module.exports = {
     get: asyncHandler(async (req, res) => {
