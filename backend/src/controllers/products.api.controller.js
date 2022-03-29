@@ -8,10 +8,13 @@ module.exports = {
                 include: [{ association: "images" }, { association: "colors" }, { association: "brands" }],
             })
             const brands = await DB.Brands.findAll()
-            let brandperproduct = {}
+            let brandperproduct = []
             for(let i = 0; i < brands.length; i++){
                 const products = productsDB.filter(product => product.brand_id === brands[i].id)
-                brandperproduct[brands[i].name] = products.length
+                brandperproduct.push({
+                    brand: brands[i].name,
+                    products: products.length
+                })
             }
             const products = productsDB.map(product => ({
                 id: product.id,
@@ -47,10 +50,13 @@ module.exports = {
                 include: [{ association: "images" }, { association: "colors" }, { association: "brands" }],
             })
             const brands = await DB.Brands.findAll()
-            let brandperproduct = {}
+            let brandperproduct = []
             for(let i = 0; i < brands.length; i++){
                 const products = productsDB.filter(product => product.brand_id === brands[i].id)
-                brandperproduct[brands[i].name] = products.length
+                brandperproduct.push({
+                    name: brands[i].name,
+                    count: products.length
+                })
             }
             const products = productsDB.map(product => ({
                 id: product.id,

@@ -11,7 +11,7 @@ module.exports = {
                 last_name: user.last_name,
                 email: user.email,
                 user_name: user.user_name,
-                deatil: '/api/users/' + user.id,
+                detail: '/api/users/' + user.id,
             }))
     
     
@@ -41,7 +41,7 @@ module.exports = {
                 last_name: user.last_name,
                 email: user.email,
                 user_name: user.user_name,
-                deatil: '/api/users/' + user.id,
+                detail: '/api/users/' + user.id,
             }))
     
             const totalPages = Math.ceil(users.length / limit)
