@@ -1,27 +1,27 @@
 import React from "react";
-import Item from "../components/Item";
+import Item2 from "../components/Item2";
 import { useEffect, useState } from "react";
 
-function Products() {
-  const [products, setProducts] = useState([]);
+function Users() {
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
-      const products = await fetchData("products");
-      setProducts(products.data);
+      const users = await fetchData("users");
+      setUsers(users.data);
       setLoading(false);
     };
     getData();
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch(`http://localhost:8000/api/products`);
+    const response = await fetch(`http://localhost:8000/api/users`);
     const data = await response.json();
     return data;
   };
 
-  const lastProduct = products[products.length - 1];
+  const lastUser = users[users.length - 1];
 
   return (
     <div className="container my-5">
@@ -31,7 +31,7 @@ function Products() {
         </h2>
         <div className="col-md-6 mt-4 mb-5 text-center">
           {!loading ? (
-            <Item {...lastProduct} />
+            <Item2 {...lastUser} />
           ) : (
             <div
               className="spinner-border m-5"
@@ -43,12 +43,12 @@ function Products() {
           )}
         </div>
         <h3 className="text-center fs-1 mb-5 mt-4">
-          <span className="badge bg-dark">Todos los productos</span>
+          <span className="badge bg-dark">Todos los usuarios</span>
         </h3>
         {!loading ? (
-          products.map((product) => (
-            <div key={product.id} className="col-md-6">
-              <Item key={product.id} {...product} />
+          users.map((user) => (
+            <div key={user.id} className="col-md-6">
+              <Item2 key={user.id} {...user} />
             </div>
           ))
         ) : (
@@ -65,4 +65,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Users;
