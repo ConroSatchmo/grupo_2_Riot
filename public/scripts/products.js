@@ -1,8 +1,7 @@
 window.addEventListener("load", function () {
-  let btnSubmit = document.querySelector("#btnSubmit");
-  let inputName = document.querySelector("input#name");
-  let inputDescription = document.querySelector("input#description");
-  let typeImage = document.querySelector("input#image").files[0].type;
+  let inputName = document.getElementById("name");
+  let inputDescription = document.getElementById("description");
+  let inputImage = document.getElementById("image");
   let erName = document.querySelector(".erName");
   let erDescription = document.querySelector(".erDescription");
   let erImage = document.querySelector(".erImage");
@@ -14,9 +13,10 @@ window.addEventListener("load", function () {
     "image/gif",
     "image/bmp",
   ];
-  btnSubmit.addEventListener("click", function (event) {
+  formulario.addEventListener("submit", function (event) {
+    event.stopPropagation();
     event.preventDefault();
-
+    console.log(inputImage);
     let errores = {};
 
     if (inputName.value.length < 1) {
@@ -28,22 +28,18 @@ window.addEventListener("load", function () {
     if (inputDescription.value.length < 20) {
       errores.description = "La descripción debe tener al menos 20 caracteres";
     }
-    if (
-      typeImage !== allowedExtension[0] &&
-      typeImage !== allowedExtension[1] &&
-      typeImage !== allowedExtension[2] &&
-      typeImage !== allowedExtension[3] &&
-      typeImage !== allowedExtension[4]
-    ) {
-      errores.image = "Debes subir una imagen válida";
-    }
-
-    if (!inputEmail.value.match(validEmailRegex)) {
-      errores.email = "Debes ingresar un email válido";
-    }
-
-    if (inputPassword.value.length < 1) {
-      errores.pass = "Debes completar la contraseña";
+    if (inputImage.files.length > 0) {
+      if (
+        inputImage.files[0].type !== allowedExtension[0] &&
+        inputImage.files[0].type !== allowedExtension[1] &&
+        inputImage.files[0].type !== allowedExtension[2] &&
+        inputImage.files[0].type !== allowedExtension[3] &&
+        inputImage.files[0].type !== allowedExtension[4]
+      ) {
+        errores.image = "Debes subir una imagen válida";
+      }
+    } else {
+      errores.image = "Debes subir una imagen";
     }
 
     if (Object.keys(errores).length >= 1) {
