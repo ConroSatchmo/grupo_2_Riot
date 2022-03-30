@@ -43,7 +43,7 @@
                     <h1>
                         <%= product.name %>
                     </h1>
-                    <h4>$<%= product.price %>00</h4>
+                    <h2>$<%= product.price %>00</h2>
                     <select name="color" id="color">
                         <% colors.forEach(color=> { %>
                             <option <%=product.colors.name==color.name ? 'selected' : '' %>><%= color.name %>
